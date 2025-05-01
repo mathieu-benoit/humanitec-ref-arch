@@ -1,1 +1,0 @@
-name: {{ index (splitList "." "${context.res.id}") 1 }}
