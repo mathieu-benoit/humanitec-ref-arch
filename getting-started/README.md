@@ -1,6 +1,5 @@
 Terraform Blueprint to deploy the Humanitec resources based on 4 different Terraform Modules:
 - [Org level Terraform Module](../modules/org/README.md)
-- [Value Chain(s) level Terraform Module](../modules/value-chain/README.md)
 - [Cluster(s) level Terraform Module](../modules/cluster/README.md)
 - [App(s) level Terraform Module](../modules/app/README.md)
 
@@ -22,8 +21,7 @@ TOC:
 
 ## Assumptions
 
-- "S&P's Product" == "Humanitec's App"
-- 1 S&P's Value Chain can have multiple S&P's Product
+- "Project" == "Humanitec's App"
 - Env Types: `non-prod` and `prod`
 - 1 AWS Account per {Value Chain, Env Type}
 - 1 EKS cluster per {Value Chain, Env Type}
