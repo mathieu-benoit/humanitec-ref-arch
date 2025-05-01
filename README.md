@@ -1,9 +1,5 @@
 TODOs:
 - HTC
-  - redis in cluster
-  - postgres in cluster
-  - onlineboutique
-  - sail-sharp
   - memorystore with OT
   - gcs with WI
   - custom pipeline

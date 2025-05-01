@@ -1,4 +1,4 @@
-resource "humanitec_resource_definition" "main" {
+resource "humanitec_resource_definition" "redis_in_cluster" {
   id          = "redis-in-cluster"
   name        = "edis-in-cluster"
   type        = "redis"
@@ -7,4 +7,9 @@ resource "humanitec_resource_definition" "main" {
   driver_inputs = {
     values_string = jsonencode(yamldecode(file("${path.module}/manifests/redis/definition-values.yaml")))
   }
+}
+
+resource "humanitec_resource_definition_criteria" "redis_in_cluster" {
+  resource_definition_id = humanitec_resource_definition.redis_in_cluster.id
+  force_delete           = true
 }
