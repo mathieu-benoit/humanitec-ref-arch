@@ -25,8 +25,13 @@ clusters = [
 
 apps = [
   {
-    id : "app-1",
-    name : "App 1",
+    id : "sail-sharp",
+    name : "sail-sharp",
+    viewer_users : []
+  },
+  {
+    id : "online-boutique",
+    name : "online-boutique",
     viewer_users : []
   },
 ]

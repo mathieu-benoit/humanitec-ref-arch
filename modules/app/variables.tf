@@ -13,6 +13,7 @@ variable "clusters" {
     cluster_name = string
     env_type_id  = string
   }))
+  default = []
 }
 
 variable "envs" {
@@ -23,29 +24,19 @@ variable "envs" {
   }))
   default = [
     {
-      "id" : "dev",
-      "name" : "Development",
-      "type" : "non-prod"
+      "id" : "development",
+      "name" : "development",
+      "type" : "development"
     },
     {
-      "id" : "qa",
-      "name" : "QA",
-      "type" : "non-prod"
+      "id" : "staging",
+      "name" : "staging",
+      "type" : "staging"
     },
     {
-      "id" : "uat",
-      "name" : "UAT",
-      "type" : "non-prod"
-    },
-    {
-      "id" : "prod",
-      "name" : "Production",
-      "type" : "prod"
-    },
-    {
-      "id" : "dr",
-      "name" : "DR",
-      "type" : "prod"
+      "id" : "production",
+      "name" : "production",
+      "type" : "production"
     }
   ]
 }

@@ -9,10 +9,10 @@ variable "env_types" {
     description = string
   }))
   default = [
-    {
+    /*{
       "id" : "development",
       "description" : "Development"
-    },
+    },*/
     {
       "id" : "staging",
       "description" : "Staging"

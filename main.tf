@@ -4,7 +4,7 @@ module "org" {
   env_types = var.env_types
 }
 
-module "clusters" {
+/*module "clusters" {
   for_each = { for cluster in var.clusters : cluster.name => cluster }
 
   source = "./modules/cluster"
@@ -24,7 +24,7 @@ locals {
       "cluster_name" : var.clusters[i].name
     }
   ]
-}
+}*/
 
 module "apps" {
   for_each = { for app in var.apps : app.id => app }
@@ -33,8 +33,9 @@ module "apps" {
 
   app_id       = each.value.id
   app_name     = each.value.name
-  clusters     = local.clusters
+  #clusters     = local.clusters
   viewer_users = each.value.viewer_users
 
-  depends_on = [module.org, module.clusters]
+  #depends_on = [module.org, module.clusters]
+  depends_on = [module.org]
 }
