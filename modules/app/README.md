@@ -38,8 +38,8 @@
 |------|-------------|------|---------|:--------:|
 | app\_id | ID of the Humanitec Application | `string` | n/a | yes |
 | app\_name | Name of the Humanitec Application | `string` | n/a | yes |
-| clusters | n/a | <pre>list(object({<br/>    cluster_name = string<br/>    env_type_id  = string<br/>  }))</pre> | n/a | yes |
-| envs | n/a | <pre>list(object({<br/>    id   = string<br/>    name = string<br/>    type = string<br/>  }))</pre> | <pre>[<br/>  {<br/>    "id": "dev",<br/>    "name": "Development",<br/>    "type": "non-prod"<br/>  },<br/>  {<br/>    "id": "qa",<br/>    "name": "QA",<br/>    "type": "non-prod"<br/>  },<br/>  {<br/>    "id": "uat",<br/>    "name": "UAT",<br/>    "type": "non-prod"<br/>  },<br/>  {<br/>    "id": "prod",<br/>    "name": "Production",<br/>    "type": "prod"<br/>  },<br/>  {<br/>    "id": "dr",<br/>    "name": "DR",<br/>    "type": "prod"<br/>  }<br/>]</pre> | no |
+| clusters | n/a | <pre>list(object({<br/>    cluster_name = string<br/>    env_type_id  = string<br/>  }))</pre> | `[]` | no |
+| envs | n/a | <pre>list(object({<br/>    id   = string<br/>    name = string<br/>    type = string<br/>  }))</pre> | <pre>[<br/>  {<br/>    "id": "development",<br/>    "name": "development",<br/>    "type": "development"<br/>  },<br/>  {<br/>    "id": "staging",<br/>    "name": "staging",<br/>    "type": "staging"<br/>  },<br/>  {<br/>    "id": "production",<br/>    "name": "production",<br/>    "type": "production"<br/>  }<br/>]</pre> | no |
 | viewer\_users | n/a | <pre>list(object({<br/>    email = string<br/>  }))</pre> | `[]` | no |
 
 ## Outputs

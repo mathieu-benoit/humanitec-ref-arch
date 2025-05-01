@@ -31,8 +31,8 @@ module "apps" {
 
   source = "./modules/app"
 
-  app_id       = each.value.id
-  app_name     = each.value.name
+  app_id   = each.value.id
+  app_name = each.value.name
   #clusters     = local.clusters
   viewer_users = each.value.viewer_users
 

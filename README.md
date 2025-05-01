@@ -147,7 +147,6 @@ terraform destroy \
 | Name | Source | Version |
 |------|--------|---------|
 | apps | ./modules/app | n/a |
-| clusters | ./modules/cluster | n/a |
 | org | ./modules/org | n/a |
 
 ## Inputs
@@ -155,16 +154,12 @@ terraform destroy \
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | apps | n/a | <pre>list(object({<br/>    id   = string<br/>    name = string<br/>    viewer_users = list(object({<br/>      email = string<br/>    }))<br/>  }))</pre> | n/a | yes |
-| clusters | n/a | <pre>list(object({<br/>    env_type_id               = string<br/>    name                      = string<br/>    load_balancer             = string<br/>    load_balancer_hosted_zone = string<br/>    aws_region                = string<br/>    cloud_account = object({<br/>      aws_role    = string<br/>      external_id = string<br/>    })<br/>  }))</pre> | n/a | yes |
 | org\_id | ID of the Humanitec Organization | `string` | n/a | yes |
-| env\_types | n/a | <pre>list(object({<br/>    id          = string<br/>    description = string<br/>  }))</pre> | <pre>[<br/>  {<br/>    "description": "Development",<br/>    "id": "development"<br/>  },<br/>  {<br/>    "description": "Staging",<br/>    "id": "staging"<br/>  },<br/>  {<br/>    "description": "Production",<br/>    "id": "production"<br/>  }<br/>]</pre> | no |
+| env\_types | n/a | <pre>list(object({<br/>    id          = string<br/>    description = string<br/>  }))</pre> | <pre>[<br/>  {<br/>    "description": "Staging",<br/>    "id": "staging"<br/>  },<br/>  {<br/>    "description": "Production",<br/>    "id": "production"<br/>  }<br/>]</pre> | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| agent\_private\_keys | n/a |
-| cloud\_accounts\_ids | n/a |
-| operator\_private\_keys | n/a |
 | service\_users\_tokens | n/a |
 <!-- END_TF_DOCS -->

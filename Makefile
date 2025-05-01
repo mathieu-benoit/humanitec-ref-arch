@@ -35,7 +35,7 @@ validate: $(VALIDATE_TF_DIRS)
 # Lint a terraform directories
 $(LINT_TF_DIRS): lint-%:
 	@echo "Lint $*"
-	tflint --config "$(PWD)/terraform/.tflint.hcl" --chdir="$*"
+	tflint --config "$(PWD)/.tflint.hcl" --chdir="$*"
 
 # Initialize tflint
 lint-init:

@@ -24,7 +24,7 @@ variable "env_types" {
   ]
 }
 
-variable "clusters" {
+/*variable "clusters" {
   type = list(object({
     env_type_id               = string
     name                      = string
@@ -36,7 +36,7 @@ variable "clusters" {
       external_id = string
     })
   }))
-}
+}*/
 
 variable "apps" {
   type = list(object({
