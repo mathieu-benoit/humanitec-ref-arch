@@ -1,0 +1,15 @@
+apps     = ""
+clusters = ""
+env_types = [
+  {
+    "description": "Environments used for Non-Production.",
+    "id": "non-prod"
+  },
+  {
+    "description": "Environments used for Production.",
+    "id": "prod"
+  }
+]
+
+# ID of the Humanitec Organization
+org_id = ""

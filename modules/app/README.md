@@ -1,0 +1,52 @@
+# App level Terraform Module
+
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 1.3.0 |
+| humanitec | ~> 1.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| humanitec | ~> 1.0 |
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [humanitec_application.app](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/application) | resource |
+| [humanitec_application_user.service_user](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/application_user) | resource |
+| [humanitec_application_user.viewer](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/application_user) | resource |
+| [humanitec_environment.env](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/environment) | resource |
+| [humanitec_environment_type_user.service_user](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/environment_type_user) | resource |
+| [humanitec_resource_definition.app_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition) | resource |
+| [humanitec_resource_definition_criteria.agent](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
+| [humanitec_resource_definition_criteria.app_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
+| [humanitec_resource_definition_criteria.cluster_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
+| [humanitec_resource_definition_criteria.eks](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
+| [humanitec_resource_definition_criteria.value_chain_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
+| [humanitec_service_user_token.service_user](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/service_user_token) | resource |
+| [humanitec_user.service_user](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/user) | resource |
+| [humanitec_users.member](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/data-sources/users) | data source |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| app\_id | ID of the Humanitec Application | `string` | n/a | yes |
+| app\_name | Name of the Humanitec Application | `string` | n/a | yes |
+| clusters | n/a | <pre>list(object({<br/>    cluster_name = string<br/>    env_type_id  = string<br/>  }))</pre> | n/a | yes |
+| value\_chain\_id | ID of the Value Chain | `string` | n/a | yes |
+| envs | n/a | <pre>list(object({<br/>    id   = string<br/>    name = string<br/>    type = string<br/>  }))</pre> | <pre>[<br/>  {<br/>    "id": "dev",<br/>    "name": "Development",<br/>    "type": "non-prod"<br/>  },<br/>  {<br/>    "id": "qa",<br/>    "name": "QA",<br/>    "type": "non-prod"<br/>  },<br/>  {<br/>    "id": "uat",<br/>    "name": "UAT",<br/>    "type": "non-prod"<br/>  },<br/>  {<br/>    "id": "prod",<br/>    "name": "Production",<br/>    "type": "prod"<br/>  },<br/>  {<br/>    "id": "dr",<br/>    "name": "DR",<br/>    "type": "prod"<br/>  }<br/>]</pre> | no |
+| viewer\_users | n/a | <pre>list(object({<br/>    email = string<br/>  }))</pre> | `[]` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| service\_users\_tokens | n/a |
+<!-- END_TF_DOCS -->

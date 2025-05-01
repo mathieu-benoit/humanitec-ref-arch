@@ -1,0 +1,37 @@
+
+# ID of the Humanitec Application
+app_id = ""
+
+# Name of the Humanitec Application
+app_name = ""
+
+clusters = ""
+envs = [
+  {
+    "id": "dev",
+    "name": "Development",
+    "type": "non-prod"
+  },
+  {
+    "id": "qa",
+    "name": "QA",
+    "type": "non-prod"
+  },
+  {
+    "id": "uat",
+    "name": "UAT",
+    "type": "non-prod"
+  },
+  {
+    "id": "prod",
+    "name": "Production",
+    "type": "prod"
+  },
+  {
+    "id": "dr",
+    "name": "DR",
+    "type": "prod"
+  }
+]
+
+viewer_users = []
