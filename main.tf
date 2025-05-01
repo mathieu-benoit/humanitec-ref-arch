@@ -34,6 +34,7 @@ module "apps" {
   app_id   = each.value.id
   app_name = each.value.name
   #clusters     = local.clusters
+  env_types    = var.env_types
   viewer_users = each.value.viewer_users
 
   #depends_on = [module.org, module.clusters]

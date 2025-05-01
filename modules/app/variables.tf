@@ -11,9 +11,16 @@ variable "app_name" {
 variable "clusters" {
   type = list(object({
     cluster_name = string
-    env_type_id  = string
+    env_type     = string
   }))
   default = []
+}
+
+variable "env_types" {
+  type = list(object({
+    id          = string
+    description = string
+  }))
 }
 
 variable "envs" {

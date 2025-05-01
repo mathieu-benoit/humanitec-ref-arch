@@ -5,7 +5,8 @@ app_id = ""
 # Name of the Humanitec Application
 app_name = ""
 
-clusters = []
+clusters  = []
+env_types = ""
 envs = [
   {
     "id": "development",
