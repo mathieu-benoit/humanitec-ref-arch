@@ -2,12 +2,16 @@ apps     = ""
 clusters = ""
 env_types = [
   {
-    "description": "Environments used for Non-Production.",
-    "id": "non-prod"
+    "description": "Development",
+    "id": "development"
   },
   {
-    "description": "Environments used for Production.",
-    "id": "prod"
+    "description": "Staging",
+    "id": "staging"
+  },
+  {
+    "description": "Production",
+    "id": "production"
   }
 ]
 

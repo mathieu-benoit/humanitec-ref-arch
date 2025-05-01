@@ -1,3 +1,12 @@
+TODOs:
+- env types
+- test definitions
+- redis in cluster
+- postgres in cluster
+- onlineboutique
+- sail-sharp
+- apphub
+
 Terraform Blueprint to deploy the Humanitec resources based on 3 different Terraform Modules:
 - [Org level Terraform Module](../modules/org/README.md)
 - [Cluster(s) level Terraform Module](../modules/cluster/README.md)
@@ -142,7 +151,7 @@ terraform destroy \
 | apps | n/a | <pre>list(object({<br/>    id   = string<br/>    name = string<br/>    viewer_users = list(object({<br/>      email = string<br/>    }))<br/>  }))</pre> | n/a | yes |
 | clusters | n/a | <pre>list(object({<br/>    env_type_id               = string<br/>    name                      = string<br/>    load_balancer             = string<br/>    load_balancer_hosted_zone = string<br/>    aws_region                = string<br/>    cloud_account = object({<br/>      aws_role    = string<br/>      external_id = string<br/>    })<br/>  }))</pre> | n/a | yes |
 | org\_id | ID of the Humanitec Organization | `string` | n/a | yes |
-| env\_types | n/a | <pre>list(object({<br/>    id          = string<br/>    description = string<br/>  }))</pre> | <pre>[<br/>  {<br/>    "description": "Environments used for Non-Production.",<br/>    "id": "non-prod"<br/>  },<br/>  {<br/>    "description": "Environments used for Production.",<br/>    "id": "prod"<br/>  }<br/>]</pre> | no |
+| env\_types | n/a | <pre>list(object({<br/>    id          = string<br/>    description = string<br/>  }))</pre> | <pre>[<br/>  {<br/>    "description": "Development",<br/>    "id": "development"<br/>  },<br/>  {<br/>    "description": "Staging",<br/>    "id": "staging"<br/>  },<br/>  {<br/>    "description": "Production",<br/>    "id": "production"<br/>  }<br/>]</pre> | no |
 
 ## Outputs
 

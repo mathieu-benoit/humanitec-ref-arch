@@ -10,12 +10,16 @@ variable "env_types" {
   }))
   default = [
     {
-      "id" : "non-prod",
-      "description" : "Environments used for Non-Production."
+      "id" : "development",
+      "description" : "Development"
     },
     {
-      "id" : "prod",
-      "description" : "Environments used for Production."
+      "id" : "staging",
+      "description" : "Staging"
+    },
+    {
+      "id" : "production",
+      "description" : "Production"
     }
   ]
 }
