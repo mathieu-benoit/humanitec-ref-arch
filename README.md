@@ -1,11 +1,20 @@
 TODOs:
-- env types
-- test definitions
-- redis in cluster
-- postgres in cluster
-- onlineboutique
-- sail-sharp
-- apphub
+- HTC
+  - redis in cluster
+  - postgres in cluster
+  - emptydir
+  - onlineboutique
+  - sail-sharp
+  - memorystore with OT
+  - gcs with WI
+  - custom pipeline
+  - apphub
+- GCP
+  - GKE cluster
+  - Nginx
+  - Operator
+  - Agent
+  - TF runner
 
 Terraform Blueprint to deploy the Humanitec resources based on 3 different Terraform Modules:
 - [Org level Terraform Module](../modules/org/README.md)

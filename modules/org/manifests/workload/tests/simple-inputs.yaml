@@ -1,0 +1,5 @@
+cookie: null
+placeholders:
+  resources.k8s-service-account.outputs.name: "my-workload"
+resource: {}
+secretRefs: {}
