@@ -1,7 +1,7 @@
 locals {
-  agent_res_id       = "agent"
-  app_res_id         = "app"
-  cluster_res_id     = "cluster"
+  agent_res_id   = "agent"
+  app_res_id     = "app"
+  cluster_res_id = "cluster"
 }
 
 resource "humanitec_resource_definition" "app_config" {

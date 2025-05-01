@@ -33,5 +33,4 @@ envs = [
     "type": "prod"
   }
 ]
-
 viewer_users = []

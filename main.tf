@@ -1,5 +1,5 @@
 module "org" {
-  source = "../modules/org"
+  source = "./modules/org"
 
   env_types = var.env_types
 }
@@ -7,7 +7,7 @@ module "org" {
 module "clusters" {
   for_each = { for cluster in var.clusters : cluster.name => cluster }
 
-  source = "../modules/cluster"
+  source = "./modules/cluster"
 
   aws_region                = each.value.aws_region
   name                      = each.value.name
@@ -29,12 +29,12 @@ locals {
 module "apps" {
   for_each = { for app in var.apps : app.id => app }
 
-  source = "../modules/app"
+  source = "./modules/app"
 
-  app_id         = each.value.id
-  app_name       = each.value.name
-  clusters       = local.clusters
-  viewer_users   = each.value.viewer_users
+  app_id       = each.value.id
+  app_name     = each.value.name
+  clusters     = local.clusters
+  viewer_users = each.value.viewer_users
 
   depends_on = [module.org, module.clusters]
 }
