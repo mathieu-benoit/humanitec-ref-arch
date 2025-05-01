@@ -2,7 +2,6 @@ TODOs:
 - HTC
   - redis in cluster
   - postgres in cluster
-  - emptydir
   - onlineboutique
   - sail-sharp
   - memorystore with OT
@@ -39,9 +38,7 @@ TOC:
 
 ## Assumptions
 
-- "Project" == "Humanitec's App"
-- Env Types: `non-prod` and `prod`
-- 1 AWS Account per {Value Chain, Env Type}
+- "Project" == "Humanitec App"
 - 1 EKS cluster per {Value Chain, Env Type}
 - 1 Humanitec Service User/Token per {App, Env Type}
 - People as:

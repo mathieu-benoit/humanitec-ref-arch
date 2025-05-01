@@ -1,0 +1,10 @@
+templates:
+  init: |-
+    name: ${context.res.guresid}-emptydir
+  manifests: |-
+    emptydir.yaml:
+      location: volumes
+      data:
+        name: {{ .init.name }}
+        emptyDir:
+          sizeLimit: 1024Mi
