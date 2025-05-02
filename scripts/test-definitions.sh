@@ -1,7 +1,7 @@
 #!/bin/bash
 set -o errexit
 
-cd modules/org/manifests/
+cd modules/htc-org/manifests/
 templates=$(ls .)
 for template in $templates;
 do

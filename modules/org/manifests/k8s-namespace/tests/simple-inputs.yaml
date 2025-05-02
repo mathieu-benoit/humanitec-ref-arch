@@ -1,6 +1,0 @@
-cookie: null
-placeholders:
-  context.app.id: "my-app"
-  context.env.id: "my-env"
-resource: {}
-secretRefs: {}

@@ -9,10 +9,10 @@ variable "env_types" {
     description = string
   }))
   default = [
-    /*{
+    {
       "id" : "development",
       "description" : "Development"
-    },*/
+    },
     {
       "id" : "staging",
       "description" : "Staging"
@@ -24,19 +24,13 @@ variable "env_types" {
   ]
 }
 
-/*variable "clusters" {
+variable "clusters" {
   type = list(object({
-    env_type_id               = string
-    name                      = string
-    load_balancer             = string
-    load_balancer_hosted_zone = string
-    aws_region                = string
-    cloud_account = object({
-      aws_role    = string
-      external_id = string
-    })
+    project_id = string
+    name       = string
+    region     = string
   }))
-}*/
+}
 
 variable "apps" {
   type = list(object({
@@ -46,4 +40,13 @@ variable "apps" {
       email = string
     }))
   }))
+}
+
+# Custom resource definitions must be applied before custom resources. 
+# This is because the provider queries the Kubernetes API for the OpenAPI specification for the resource supplied in the manifest attribute.
+# If the CRD doesn’t exist in the OpenAPI specification during plan time then Terraform can’t use it to create custom resources.
+variable "humanitec_crds_already_installed" {
+  description = "Custom resource definitions must be applied before custom resources."
+  type        = bool
+  default     = false
 }

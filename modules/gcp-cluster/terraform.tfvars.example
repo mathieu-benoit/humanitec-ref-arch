@@ -1,0 +1,15 @@
+
+# GKE cluster name
+cluster_name = ""
+
+# Custom resource definitions must be applied before custom resources.
+humanitec_crds_already_installed = false
+
+# Humanitec Organization ID
+org_id = ""
+
+# GCP Project ID
+project_id = ""
+
+# GCP Region
+region = ""

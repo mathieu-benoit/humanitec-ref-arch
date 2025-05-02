@@ -1,5 +1,10 @@
-apps = ""
+apps     = ""
+clusters = ""
 env_types = [
+  {
+    "description": "Development",
+    "id": "development"
+  },
   {
     "description": "Staging",
     "id": "staging"
@@ -9,6 +14,9 @@ env_types = [
     "id": "production"
   }
 ]
+
+# Custom resource definitions must be applied before custom resources.
+humanitec_crds_already_installed = false
 
 # ID of the Humanitec Organization
 org_id = ""

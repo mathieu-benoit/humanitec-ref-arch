@@ -1,0 +1,24 @@
+
+# The public key of the Agent.
+agent_public_key = ""
+
+# Humanitec Environment Type
+env_type = ""
+
+# ID of the GKE cluster resource
+id = ""
+
+# The Load Balancer of the EKS cluster
+load_balancer = ""
+
+# GKE cluster name
+name = ""
+
+# The public key of the Operator.
+operator_public_key = ""
+
+# GCP Project ID
+project_id = ""
+
+# GCP Region
+region = ""

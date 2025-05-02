@@ -5,10 +5,6 @@ TODOs:
   - custom pipeline
   - apphub
 - GCP
-  - GKE cluster
-  - Nginx
-  - Operator
-  - Agent
   - TF runner
 
 Terraform Blueprint to deploy the Humanitec resources based on 3 different Terraform Modules:
@@ -29,13 +25,12 @@ TOC:
 
 ## Prerequisites
 
-- EKS cluster provisioned in AWS as an input for the `cluster` Terraform Module.
-- AWS Account info as an input for the `cluster` Terraform Module.
+- GKE cluster provisioned in GCP as an input for the `cluster` Terraform Module.
 
 ## Assumptions
 
 - "Project" == "Humanitec App"
-- 1 EKS cluster per {Value Chain, Env Type}
+- 1 GKE cluster per Env Type
 - 1 Humanitec Service User/Token per {App, Env Type}
 - People as:
   - `Member` at the Org level
@@ -56,42 +51,13 @@ terraform workspace select -or-create=true ${HUMANITEC_ORG}
 
 terraform init -upgrade
 
-# Edit the terraform.tfvars accordingly to add/update your values.
-
 terraform plan \
     -var org_id=${HUMANITEC_ORG} \
+    -var 'clusters=[{name="mabenoit-demo", region="northamerica-northeast1", project_id="mabenoit-demo-458522"}]' \
+    -var humanitec_crds_already_installed=true \
     -out out.tfplan
 
 terraform apply out.tfplan
-```
-
-## Update EKS cluster
-
-Update EKS cluster based on `outputs`:
-```bash
-terraform output operator_private_keys
-
-terraform output agent_private_keys
-```
-
-```bash
-AGENT_PRIVATE_KEY=FIXME
-OPERATOR_PRIVATE_KEY=FIXME
-
-helm install humanitec-agent \
-    oci://ghcr.io/humanitec/charts/humanitec-agent \
-    --namespace humanitec-agent \
-    --create-namespace \
-    --set "humanitec.org=${HUMANITEC_ORG}" \
-    --set "humanitec.privateKey=${AGENT_PRIVATE_KEY}"
-
-helm install humanitec-operator \
-    oci://ghcr.io/humanitec/charts/humanitec-operator \
-    --namespace humanitec-operator \
-    --create-namespace
-kubectl --namespace humanitec-operator create secret generic humanitec-operator-private-key \
-    --from-literal=privateKey=${OPERATOR_PRIVATE_KEY} \
-    --from-literal=humanitecOrganisationID=${HUMANITEC_ORG}
 ```
 
 ## Test connectivity
@@ -136,22 +102,27 @@ terraform destroy \
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
+| google | ~> 5.1 |
 | humanitec | ~> 1.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| apps | ./modules/app | n/a |
-| org | ./modules/org | n/a |
+| apps | ./modules/htc-app | n/a |
+| gcp\_cluster | ./modules/gcp-cluster | n/a |
+| htc\_clusters | ./modules/htc-cluster | n/a |
+| org | ./modules/htc-org | n/a |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | apps | n/a | <pre>list(object({<br/>    id   = string<br/>    name = string<br/>    viewer_users = list(object({<br/>      email = string<br/>    }))<br/>  }))</pre> | n/a | yes |
+| clusters | n/a | <pre>list(object({<br/>    project_id = string<br/>    name       = string<br/>    region     = string<br/>  }))</pre> | n/a | yes |
 | org\_id | ID of the Humanitec Organization | `string` | n/a | yes |
-| env\_types | n/a | <pre>list(object({<br/>    id          = string<br/>    description = string<br/>  }))</pre> | <pre>[<br/>  {<br/>    "description": "Staging",<br/>    "id": "staging"<br/>  },<br/>  {<br/>    "description": "Production",<br/>    "id": "production"<br/>  }<br/>]</pre> | no |
+| env\_types | n/a | <pre>list(object({<br/>    id          = string<br/>    description = string<br/>  }))</pre> | <pre>[<br/>  {<br/>    "description": "Development",<br/>    "id": "development"<br/>  },<br/>  {<br/>    "description": "Staging",<br/>    "id": "staging"<br/>  },<br/>  {<br/>    "description": "Production",<br/>    "id": "production"<br/>  }<br/>]</pre> | no |
+| humanitec\_crds\_already\_installed | Custom resource definitions must be applied before custom resources. | `bool` | `false` | no |
 
 ## Outputs
 
