@@ -33,12 +33,12 @@ module "htc_clusters" {
 
   source = "./modules/htc-cluster"
 
-  id                   = each.value.id
-  env_type             = each.value.env_type
-  region               = each.value.region
-  project_id           = each.value.project_id
-  name                 = each.value.name
-  load_balancer        = each.value.load_balancer
+  id                  = each.value.id
+  env_type            = each.value.env_type
+  region              = each.value.region
+  project_id          = each.value.project_id
+  name                = each.value.name
+  load_balancer       = each.value.load_balancer
   operator_public_key = each.value.operator_public_key
   agent_public_key    = each.value.agent_public_key
 }
