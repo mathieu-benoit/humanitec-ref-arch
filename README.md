@@ -3,16 +3,19 @@ TODOs:
 - HTC
   - memorystore with OT
   - gcs with WI
-  - custom pipeline
+  - Backstage
   - apphub
 - GCP
   - Cloud Account for GKE
   - TF runner
 
-Terraform Blueprint to deploy the Humanitec resources based on 3 different Terraform Modules:
-- [Org level Terraform Module](../modules/org/README.md)
-- [Cluster(s) level Terraform Module](../modules/cluster/README.md)
-- [App(s) level Terraform Module](../modules/app/README.md)
+Terraform Blueprint to deploy the Humanitec resources based on 4 different Terraform Modules:
+- Google Cloud
+  - [GKE Terraform Module](../modules/gcp-cluster/README.md)
+- Humanitec
+  - [Org level Terraform Module](../modules/htc-org/README.md)
+  - [Cluster(s) level Terraform Module](../modules/htc-cluster/README.md)
+  - [App(s) level Terraform Module](../modules/htc-app/README.md)
 
 TOC:
 - [Prerequisites](#prerequisites)

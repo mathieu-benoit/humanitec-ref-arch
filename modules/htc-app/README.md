@@ -18,6 +18,8 @@
 | [humanitec_application_user.viewer](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/application_user) | resource |
 | [humanitec_environment.env](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/environment) | resource |
 | [humanitec_environment_type_user.service_user](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/environment_type_user) | resource |
+| [humanitec_pipeline.wait_for_readiness](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/pipeline) | resource |
+| [humanitec_pipeline_criteria.wait_for_readiness](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/pipeline_criteria) | resource |
 | [humanitec_resource_definition.app_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition) | resource |
 | [humanitec_resource_definition_criteria.app_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_service_user_token.service_user](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/service_user_token) | resource |
