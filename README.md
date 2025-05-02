@@ -1,10 +1,12 @@
 TODOs:
+- Arch diagram
 - HTC
   - memorystore with OT
   - gcs with WI
   - custom pipeline
   - apphub
 - GCP
+  - Cloud Account for GKE
   - TF runner
 
 Terraform Blueprint to deploy the Humanitec resources based on 3 different Terraform Modules:
@@ -53,7 +55,7 @@ terraform init -upgrade
 
 terraform plan \
     -var org_id=${HUMANITEC_ORG} \
-    -var 'clusters=[{name="FIXME", region="northamerica-northeast1", project_id="FIXME"}]' \
+    -var 'clusters=[{name="mabenoit-demo", region="northamerica-northeast1", project_id="mabenoit-demo-458522"}]' \
     -var humanitec_crds_already_installed=true \
     -out out.tfplan
 
