@@ -38,7 +38,6 @@ jobs:
 EOT
 }
 
-/* You will have a conflict here (concurrent update), you'll need to run terraform plan|apply 3 times to get passed this...*/
 resource "humanitec_pipeline_criteria" "wait_for_readiness" {
   /* Iterating through each env_type to avoid the conflict with the default pipeline with app_id in criteria. */
   for_each = { for env_type in var.env_types : env_type.id => env_type }
