@@ -14,7 +14,7 @@ resource "kubernetes_namespace" "humanitec_operator" {
       "pod-security.kubernetes.io/enforce" = "restricted"
     }
 
-    name = "humanitec-operator"
+    name = "humanitec-operator-system"
   }
 }
 
