@@ -5,6 +5,9 @@ app_id = ""
 # Name of the Humanitec Application
 app_name = ""
 
+# Cost Center ID
+cost_center = ""
+
 env_types = ""
 envs = [
   {

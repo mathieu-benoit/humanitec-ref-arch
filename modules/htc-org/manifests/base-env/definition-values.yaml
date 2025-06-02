@@ -9,8 +9,8 @@ templates:
           name: compute-resources
         spec:
           hard:
-            limits.cpu: $${resources['config#quota'].outputs.limits-cpu}
-            limits.memory: $${resources['config#quota'].outputs.limits-memory}
+            limits.cpu: ${resources['config#quota'].outputs.limits-cpu}
+            limits.memory: ${resources['config#quota'].outputs.limits-memory}
     allow-nginx-ingress.yaml:
       location: namespace
       data:

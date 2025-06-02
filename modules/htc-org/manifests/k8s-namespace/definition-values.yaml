@@ -13,6 +13,7 @@ templates:
             humanitec.io/env-id: ${context.env.id}
             humanitec.io/env-type: ${context.env.type}
             pod-security.kubernetes.io/enforce: restricted
+            mycompany.com/cost-center: ${resources['config#app'].outputs.cost_center}
           name: {{ .init.name }}
   outputs: |-
     namespace: {{ .init.name }}

@@ -8,6 +8,11 @@ variable "app_name" {
   type        = string
 }
 
+variable "cost_center" {
+  description = "Cost Center ID"
+  type        = string
+}
+
 variable "env_types" {
   type = list(object({
     id          = string

@@ -50,6 +50,7 @@ module "apps" {
 
   app_id       = each.value.id
   app_name     = each.value.name
+  cost_center  = each.value.cost_center
   env_types    = var.env_types
   viewer_users = each.value.viewer_users
 
