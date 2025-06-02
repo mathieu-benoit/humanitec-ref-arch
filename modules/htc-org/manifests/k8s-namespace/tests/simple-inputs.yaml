@@ -3,5 +3,6 @@ placeholders:
   context.app.id: "my-app"
   context.env.id: "my-env-id"
   context.env.type: "my-env-type"
+  resources['config#app'].outputs.cost_center: "cc-id"
 resource: {}
 secretRefs: {}
