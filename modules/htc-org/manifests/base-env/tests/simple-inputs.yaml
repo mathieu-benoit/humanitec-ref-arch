@@ -1,0 +1,6 @@
+cookie: null
+placeholders:
+  resources['config#quota'].outputs.limits-cpu: "750m"
+  resources['config#quota'].outputs.limits-memory: "750Mi"
+resource: {}
+secretRefs: {}
