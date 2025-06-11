@@ -1,5 +1,16 @@
 templates:
   manifests: |-
+    secret-store.yaml:
+      location: namespace
+      data:
+        apiVersion: humanitec.io/v1alpha1
+        kind: SecretStore
+        metadata:
+          name: ${context.app.id}-${context.env.id}
+        spec:
+          gcpsm:
+            auth: {}
+            projectID: ${resources['config#app'].outputs.gcp_project_id}
     quota.yaml:
       location: namespace
       data:

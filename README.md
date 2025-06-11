@@ -123,7 +123,7 @@ terraform destroy \
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| apps | n/a | <pre>list(object({<br/>    id          = string<br/>    name        = string<br/>    cost_center = string<br/>    viewer_users = list(object({<br/>      email = string<br/>    }))<br/>  }))</pre> | n/a | yes |
+| apps | n/a | <pre>list(object({<br/>    id             = string<br/>    name           = string<br/>    cost_center    = string<br/>    gcp_project_id = string<br/>    viewer_users = list(object({<br/>      email = string<br/>    }))<br/>  }))</pre> | n/a | yes |
 | clusters | n/a | <pre>list(object({<br/>    project_id = string<br/>    name       = string<br/>    region     = string<br/>  }))</pre> | n/a | yes |
 | org\_id | ID of the Humanitec Organization | `string` | n/a | yes |
 | env\_types | n/a | <pre>list(object({<br/>    id          = string<br/>    description = string<br/>  }))</pre> | <pre>[<br/>  {<br/>    "description": "Development",<br/>    "id": "development"<br/>  },<br/>  {<br/>    "description": "Staging",<br/>    "id": "staging"<br/>  },<br/>  {<br/>    "description": "Production",<br/>    "id": "production"<br/>  }<br/>]</pre> | no |

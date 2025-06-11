@@ -9,8 +9,9 @@ resource "humanitec_resource_definition" "app_config" {
   type        = "config"
   driver_inputs = {
     values_string = jsonencode({
-      "app_name"    = var.app_name
-      "cost_center" = var.cost_center
+      "app_name"       = var.app_name
+      "cost_center"    = var.cost_center
+      "gcp_project_id" = var.gcp_project_id
     })
   }
 }

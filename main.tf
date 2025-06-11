@@ -48,11 +48,12 @@ module "apps" {
 
   source = "./modules/htc-app"
 
-  app_id       = each.value.id
-  app_name     = each.value.name
-  cost_center  = each.value.cost_center
-  env_types    = var.env_types
-  viewer_users = each.value.viewer_users
+  app_id         = each.value.id
+  app_name       = each.value.name
+  cost_center    = each.value.cost_center
+  gcp_project_id = each.value.gcp_project_id
+  env_types      = var.env_types
+  viewer_users   = each.value.viewer_users
 
   depends_on = [module.org]
 }

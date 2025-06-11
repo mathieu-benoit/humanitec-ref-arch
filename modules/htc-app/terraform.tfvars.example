@@ -26,4 +26,8 @@ envs = [
     "type": "production"
   }
 ]
+
+# Google Cloud Project ID
+gcp_project_id = ""
+
 viewer_users = []

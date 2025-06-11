@@ -13,6 +13,11 @@ variable "cost_center" {
   type        = string
 }
 
+variable "gcp_project_id" {
+  description = "Google Cloud Project ID"
+  type        = string
+}
+
 variable "env_types" {
   type = list(object({
     id          = string

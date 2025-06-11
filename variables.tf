@@ -34,9 +34,10 @@ variable "clusters" {
 
 variable "apps" {
   type = list(object({
-    id          = string
-    name        = string
-    cost_center = string
+    id             = string
+    name           = string
+    cost_center    = string
+    gcp_project_id = string
     viewer_users = list(object({
       email = string
     }))
