@@ -1,6 +1,9 @@
 cookie: null
 placeholders:
+  context.app.id: "my-app"
+  context.env.id: "my-env-id"
   resources['config#quota'].outputs.limits-cpu: "750m"
   resources['config#quota'].outputs.limits-memory: "750Mi"
+  resources['config#app'].outputs.gcp_project_id: "my-project-id"
 resource: {}
 secretRefs: {}
