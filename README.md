@@ -19,7 +19,6 @@ Terraform Blueprint to deploy the Humanitec resources based on 4 different Terra
   - [App(s) level Terraform Module](../modules/htc-app/README.md)
 
 TOC:
-- [Prerequisites](#prerequisites)
 - [Assumptions](#assumptions)
 - [Deploy the Terraform Blueprint](#deploy-the-terraform-blueprint)
 - [Test connectivity](#test-connectivity)
@@ -27,12 +26,9 @@ TOC:
 - [Terraform Blueprint documentation](#terraform-blueprint-documentation)
 - [Available resource types for the Developers in their Score files](#available-resource-types-for-the-developers-in-their-score-files)
 
-## Prerequisites
+# Assumptions
 
 - GKE cluster provisioned in GCP as an input for the `cluster` Terraform Module.
-
-## Assumptions
-
 - "Project" == "Humanitec App"
 - 1 GKE cluster per Env Type
 - 1 Humanitec Service User/Token per {App, Env Type}
@@ -44,7 +40,7 @@ TOC:
   - `Developer` at the App Level
   - `Deployer` at the Env Type
 
-## Deploy the Terraform Blueprint
+# Deploy the Terraform Blueprint
 
 ```bash
 export HUMANITEC_ORG=FIXME
@@ -65,7 +61,7 @@ terraform plan \
 terraform apply out.tfplan
 ```
 
-## Test connectivity
+# Test connectivity
 
 ```bash
 humctl get resource-account
@@ -84,7 +80,7 @@ humctl resources check-connectivity \
     --env-type ${ENV_TYPE}
 ```
 
-## Update Developers's CD pipelines
+# Update Developers's CD pipelines
 
 Update Developer's CD pipelines based on `outputs`:
 ```bash
@@ -93,7 +89,7 @@ terraform output service_users_tokens
 
 You can also use this token locally (`HUMANITEC_TOKEN`) and run `humctl score deploy --app --env`
 
-## Terraform Blueprint documentation
+# Terraform Blueprint documentation
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -131,7 +127,7 @@ You can also use this token locally (`HUMANITEC_TOKEN`) and run `humctl score de
 | service\_users\_tokens | n/a |
 <!-- END_TF_DOCS -->
 
-## Available resource types for the Developers in their Score files
+# Available resource types for the Developers in their Score files
 
 ```bash
 humctl score available-resource-types
