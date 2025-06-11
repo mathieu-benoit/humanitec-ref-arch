@@ -3,4 +3,3 @@
 **/terraform.tfstate.backup
 **/.terraform
 **/.terraform.lock.hcl
-modules/org/manifests/*/test-*.yaml
