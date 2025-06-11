@@ -15,6 +15,7 @@
 |------|------|
 | [humanitec_agent.agent](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/agent) | resource |
 | [humanitec_key.operator](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/key) | resource |
+| [humanitec_resource_account.cluster_account](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_account) | resource |
 | [humanitec_resource_definition.agent](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition) | resource |
 | [humanitec_resource_definition.cluster_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition) | resource |
 | [humanitec_resource_definition.k8s_cluster](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition) | resource |
@@ -27,7 +28,9 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | agent\_public\_key | The public key of the Agent. | `string` | n/a | yes |
-| env\_type | Humanitec Environment Type | `string` | n/a | yes |
+| cluster\_access\_gsa\_email | The email of the GSA to access the GKE cluster from Humanitec. | `string` | n/a | yes |
+| env\_types | n/a | <pre>list(object({<br/>    id          = string<br/>    description = string<br/>  }))</pre> | n/a | yes |
+| gcp\_wi\_pool\_provider\_name | The Workload Identity Pool Provider name to access the GKE cluster from Humanitec. | `string` | n/a | yes |
 | id | ID of the GKE cluster resource | `string` | n/a | yes |
 | load\_balancer | The Load Balancer of the EKS cluster | `string` | n/a | yes |
 | name | GKE cluster name | `string` | n/a | yes |

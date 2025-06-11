@@ -8,7 +8,6 @@ TODOs:
   - Backstage
   - apphub
 - GCP
-  - Cloud Account for GKE
   - TF runner
 
 Terraform Blueprint to deploy the Humanitec resources based on 4 different Terraform Modules:
@@ -43,7 +42,7 @@ TOC:
   - `Member` at the Org level
   - `Viewer` at the App Level
 - Service User:
-  - `Member` at the Org level
+  - `Artefact Contributor` for Development and `Member` for other Environments at the Org level
   - `Developer` at the App Level
   - `Deployer` at the Env Type
 
@@ -71,15 +70,15 @@ terraform apply out.tfplan
 ## Test connectivity
 
 ```bash
-terraform output cloud_accounts_ids
+humctl get resource-account
 
 ACCOUNT_ID=FIXME
 
 humctl resources check-account ${ACCOUNT_ID}
 
-APP_ID=FIXME
-ENV_ID=FIXME
-ENV_TYPE=FIXME
+APP_ID=sail-sharp
+ENV_ID=development
+ENV_TYPE=development
 
 humctl resources check-connectivity \
     --app ${APP_ID} \
@@ -95,12 +94,6 @@ terraform output service_users_tokens
 ```
 
 You can also use this token locally (`HUMANITEC_TOKEN`) and run `humctl score deploy --app --env`
-
-## Destroy the Terraform Blueprint
-```bash
-terraform destroy \
-    -var org_id=${HUMANITEC_ORG}
-```
 
 ## Terraform Blueprint documentation
 
@@ -119,7 +112,7 @@ terraform destroy \
 |------|--------|---------|
 | apps | ./modules/htc-app | n/a |
 | gcp\_cluster | ./modules/gcp-cluster | n/a |
-| htc\_clusters | ./modules/htc-cluster | n/a |
+| htc\_cluster | ./modules/htc-cluster | n/a |
 | org | ./modules/htc-org | n/a |
 
 ## Inputs
@@ -139,3 +132,20 @@ terraform destroy \
 |------|-------------|
 | service\_users\_tokens | n/a |
 <!-- END_TF_DOCS -->
+
+## Available resource types for the Developers in their Score files
+
+```bash
+humctl score available-resource-types
+```
+
+```none
+Name                    Type            Category        Class
+Environment             environment     score           default
+Service                 service         score           default
+Persistent Volume       volume          datastore       default
+Redis                   redis           datastore       default
+Route                   route           ingress         default
+TLS certificate         tls-cert        security        default
+Postgres                postgres        datastore       default
+```

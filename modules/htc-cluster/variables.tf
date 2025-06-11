@@ -3,9 +3,11 @@ variable "id" {
   description = "ID of the GKE cluster resource"
 }
 
-variable "env_type" {
-  type        = string
-  description = "Humanitec Environment Type"
+variable "env_types" {
+  type = list(object({
+    id          = string
+    description = string
+  }))
 }
 
 variable "project_id" {
@@ -36,6 +38,18 @@ variable "agent_public_key" {
 
 variable "operator_public_key" {
   description = "The public key of the Operator."
+  type        = string
+  sensitive   = true
+}
+
+variable "cluster_access_gsa_email" {
+  description = "The email of the GSA to access the GKE cluster from Humanitec."
+  type        = string
+  sensitive   = true
+}
+
+variable "gcp_wi_pool_provider_name" {
+  description = "The Workload Identity Pool Provider name to access the GKE cluster from Humanitec."
   type        = string
   sensitive   = true
 }

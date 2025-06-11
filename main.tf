@@ -16,33 +16,19 @@ module "gcp_cluster" {
   humanitec_crds_already_installed = var.humanitec_crds_already_installed
 }
 
-locals {
-  clusters = [
-    for i in range(length(var.env_types)) : {
-      "id" : "${var.clusters[0].name}-${var.env_types[i].id}"
-      "env_type" : var.env_types[i].id
-      "name" : var.clusters[0].name
-      "load_balancer" : module.gcp_cluster.load_balancer
-      "region" : var.clusters[0].region
-      "project_id" : var.clusters[0].project_id
-      "operator_public_key" : i == 0 ? module.gcp_cluster.operator_public_key : ""
-      "agent_public_key" : module.gcp_cluster.agent_public_key
-    }
-  ]
-}
-module "htc_clusters" {
-  for_each = { for cluster in local.clusters : cluster.id => cluster }
-
+module "htc_cluster" {
   source = "./modules/htc-cluster"
 
-  id                  = each.value.id
-  env_type            = each.value.env_type
-  region              = each.value.region
-  project_id          = each.value.project_id
-  name                = each.value.name
-  load_balancer       = each.value.load_balancer
-  operator_public_key = each.value.operator_public_key
-  agent_public_key    = each.value.agent_public_key
+  id                        = module.gcp_cluster.cloud_account_id
+  env_types                 = var.env_types
+  region                    = var.clusters[0].region
+  project_id                = var.clusters[0].project_id
+  name                      = var.clusters[0].name
+  load_balancer             = module.gcp_cluster.load_balancer
+  operator_public_key       = module.gcp_cluster.operator_public_key
+  agent_public_key          = module.gcp_cluster.agent_public_key
+  cluster_access_gsa_email  = module.gcp_cluster.cluster_access_gsa_email
+  gcp_wi_pool_provider_name = module.gcp_cluster.gcp_wi_pool_provider_name
 }
 
 module "apps" {

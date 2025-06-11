@@ -21,8 +21,10 @@ resource "humanitec_resource_definition" "agent" {
 }
 
 resource "humanitec_resource_definition_criteria" "agent" {
+  for_each = { for env_type in var.env_types : env_type.id => env_type }
+  
   resource_definition_id = humanitec_resource_definition.agent.id
-  env_type               = var.env_type
+  env_type               = each.value.id
   res_id                 = "agent"
 
   force_delete = true
