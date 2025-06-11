@@ -36,5 +36,6 @@
 | name | GKE cluster name | `string` | n/a | yes |
 | operator\_public\_key | The public key of the Operator. | `string` | n/a | yes |
 | project\_id | GCP Project ID | `string` | n/a | yes |
+| project\_number | GCP Project number | `string` | n/a | yes |
 | region | GCP Region | `string` | n/a | yes |
 <!-- END_TF_DOCS -->

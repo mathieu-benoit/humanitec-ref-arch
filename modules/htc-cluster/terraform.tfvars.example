@@ -25,5 +25,8 @@ operator_public_key = ""
 # GCP Project ID
 project_id = ""
 
+# GCP Project number
+project_number = ""
+
 # GCP Region
 region = ""

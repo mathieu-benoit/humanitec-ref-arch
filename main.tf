@@ -23,6 +23,7 @@ module "htc_cluster" {
   env_types                 = var.env_types
   region                    = var.clusters[0].region
   project_id                = var.clusters[0].project_id
+  project_number            = module.gcp_cluster.project_number
   name                      = var.clusters[0].name
   load_balancer             = module.gcp_cluster.load_balancer
   operator_public_key       = module.gcp_cluster.operator_public_key
@@ -42,6 +43,7 @@ module "apps" {
   gcp_project_id = each.value.gcp_project_id
   env_types      = var.env_types
   viewer_users   = each.value.viewer_users
+  resource_quota = each.value.resource_quota
 
   depends_on = [module.org]
 }

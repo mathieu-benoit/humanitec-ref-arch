@@ -27,3 +27,7 @@ output "cluster_access_gsa_email" {
 output "cloud_account_id" {
   value = google_service_account.gke_cluster_access.account_id
 }
+
+output "project_number" {
+  value = data.google_project.project.number
+}

@@ -30,4 +30,5 @@ envs = [
 # Google Cloud Project ID
 gcp_project_id = ""
 
-viewer_users = []
+resource_quota = ""
+viewer_users   = []

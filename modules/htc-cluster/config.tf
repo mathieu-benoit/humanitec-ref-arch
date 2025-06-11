@@ -5,7 +5,9 @@ resource "humanitec_resource_definition" "cluster_config" {
   type        = "config"
   driver_inputs = {
     values_string = jsonencode({
-      "region" = var.region
+      "region"         = var.region
+      "project_id"     = var.project_id
+      "project_number" = var.project_number
     })
   }
 }

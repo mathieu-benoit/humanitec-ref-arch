@@ -61,4 +61,5 @@
 | gcp\_wi\_pool\_provider\_name | n/a |
 | load\_balancer | n/a |
 | operator\_public\_key | n/a |
+| project\_number | n/a |
 <!-- END_TF_DOCS -->

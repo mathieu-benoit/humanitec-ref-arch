@@ -47,6 +47,10 @@ variable "apps" {
     viewer_users = list(object({
       email = string
     }))
+    resource_quota = object({
+      limits-cpu    = string
+      limits-memory = string
+    })
   }))
 }
 

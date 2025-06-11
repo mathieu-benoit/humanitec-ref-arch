@@ -56,3 +56,11 @@ variable "viewer_users" {
   }))
   default = []
 }
+
+variable "resource_quota" {
+  type = object({
+    limits-cpu    = string
+    limits-memory = string
+  })
+  default = null
+}

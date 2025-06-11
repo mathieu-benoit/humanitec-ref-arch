@@ -1,8 +1,8 @@
 cookie: null
 placeholders:
   context.res.id: "modules.my-workload"
-  resources['config.default#gke'].outputs.gke_project_id: "my-project-id"
-  resources['config.default#gke'].outputs.gke_project_number: "my-project-number"
+  resources['config.default#gke'].outputs.project_id: "my-project-id"
+  resources['config.default#gke'].outputs.project_number: "my-project-number"
   resources['k8s-namespace.default#k8s-namespace'].outputs.namespace: "my-namespace"
 resource: {}
 secretRefs: {}
