@@ -2,14 +2,13 @@
 
 TODOs:
 - Arch diagram
+- GCP
+  - TF runner
 - HTC
-  - Pipeline
   - memorystore with OT
   - gcs with WI
   - Backstage
   - apphub
-- GCP
-  - TF runner
 
 Terraform Blueprint to deploy the Humanitec resources based on 4 different Terraform Modules:
 - Google Cloud
@@ -22,12 +21,9 @@ Terraform Blueprint to deploy the Humanitec resources based on 4 different Terra
 TOC:
 - [Prerequisites](#prerequisites)
 - [Assumptions](#assumptions)
-- [TODOs](#todos)
 - [Deploy the Terraform Blueprint](#deploy-the-terraform-blueprint)
-- [Update EKS cluster](#update-eks-cluster)
 - [Test connectivity](#test-connectivity)
 - [Update Developers's CD pipelines](#update-developerss-cd-pipelines)
-- [(Optional) Destroy the Terraform Blueprint](#destroy-the-terraform-blueprint)
 - [Terraform Blueprint documentation](#terraform-blueprint-documentation)
 
 ## Prerequisites
