@@ -20,3 +20,6 @@ humanitec_crds_already_installed = false
 
 # ID of the Humanitec Organization
 org_id = ""
+
+# Token to authenticate to Humanitec (just use for terracurl_request for custom resource types)
+token = ""

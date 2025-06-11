@@ -8,6 +8,7 @@
 | Name | Version |
 |------|---------|
 | humanitec | n/a |
+| terracurl | n/a |
 
 ## Resources
 
@@ -33,12 +34,15 @@
 | [humanitec_resource_definition_criteria.redis_in_cluster](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.workload](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_secretstore.enable_operator_mode](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/secretstore) | resource |
+| [terracurl_request.dns_resource_type](https://registry.terraform.io/providers/devops-rob/terracurl/latest/docs/resources/request) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | env\_types | n/a | <pre>list(object({<br/>    id          = string<br/>    description = string<br/>  }))</pre> | n/a | yes |
+| org\_id | ID of the Humanitec Organization | `string` | n/a | yes |
+| token | Token to authenticate to Humanitec (just use for terracurl\_request for custom resource types) | `string` | n/a | yes |
 
 ## Outputs
 

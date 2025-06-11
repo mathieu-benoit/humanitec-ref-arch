@@ -3,5 +3,8 @@ terraform {
     humanitec = {
       source = "humanitec/humanitec"
     }
+    terracurl = {
+      source = "devops-rob/terracurl"
+    }
   }
 }
