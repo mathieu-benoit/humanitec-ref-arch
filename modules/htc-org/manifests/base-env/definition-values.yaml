@@ -41,3 +41,7 @@ templates:
               podSelector:
                 matchLabels:
                   app.kubernetes.io/name: ingress-nginx
+          - from:
+            - namespaceSelector:
+                matchLabels:
+                  kubernetes.io/metadata.name: ${resources.k8s-namespace#k8s-namespace.outputs.namespace}
