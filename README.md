@@ -1,3 +1,5 @@
+[![CI](https://github.com/mathieu-benoit/humanitec-ref-arch/actions/workflows/ci.yaml/badge.svg)](https://github.com/mathieu-benoit/humanitec-ref-arch/actions/workflows/ci.yaml)
+
 TODOs:
 - Arch diagram
 - HTC
