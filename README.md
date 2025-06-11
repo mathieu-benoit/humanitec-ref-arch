@@ -25,6 +25,7 @@ TOC:
 - [Test connectivity](#test-connectivity)
 - [Update Developers's CD pipelines](#update-developerss-cd-pipelines)
 - [Terraform Blueprint documentation](#terraform-blueprint-documentation)
+- [Available resource types for the Developers in their Score files](#available-resource-types-for-the-developers-in-their-score-files)
 
 ## Prerequisites
 
