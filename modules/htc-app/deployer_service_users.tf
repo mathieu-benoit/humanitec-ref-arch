@@ -2,7 +2,7 @@ resource "humanitec_user" "service_user" {
   for_each = { for env_type in var.env_types : env_type.id => env_type }
 
   name = "su-${var.app_id}-${each.value.id}"
-  role = "member"
+  role = each.value.id == "development" ? "artefactContributor" : "member"
   type = "service"
 }
 
