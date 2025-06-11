@@ -19,7 +19,7 @@ resource "humanitec_resource_definition" "k8s_cluster" {
 
 resource "humanitec_resource_definition_criteria" "k8s_cluster" {
   for_each = { for env_type in var.env_types : env_type.id => env_type }
-  
+
   resource_definition_id = humanitec_resource_definition.k8s_cluster.id
   env_type               = each.value.id
 
