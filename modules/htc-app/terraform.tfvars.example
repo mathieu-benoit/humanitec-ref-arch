@@ -36,6 +36,9 @@ envs = [
 # Google Cloud Project ID
 gcp_project_id = ""
 
+# Google Cloud Project region
+gcp_region = ""
+
 # The Workload Identity Pool Provider name to access the GKE cluster from Humanitec.
 gcp_wi_pool_provider_name = ""
 

@@ -3,7 +3,7 @@ resource "google_project_service" "gsm" {
   service = "secretmanager.googleapis.com"
 }
 
-resource "google_project_service" "memorystore" {
+resource "google_project_service" "memorystore_redis" {
   project = var.gcp_project_id
-  service = "memorystore.googleapis.com"
+  service = "redis.googleapis.com"
 }

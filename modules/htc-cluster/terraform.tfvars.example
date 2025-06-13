@@ -22,6 +22,9 @@ name = ""
 # The public key of the Operator.
 operator_public_key = ""
 
+# ID of the Humanitec Organization
+org_id = ""
+
 # GCP Project ID
 project_id = ""
 

@@ -18,6 +18,11 @@ variable "gcp_project_id" {
   type        = string
 }
 
+variable "gcp_region" {
+  description = "Google Cloud Project region"
+  type        = string
+}
+
 variable "env_types" {
   type = list(object({
     id          = string

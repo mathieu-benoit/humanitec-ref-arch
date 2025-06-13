@@ -18,6 +18,16 @@ resource "google_project_iam_member" "iammember" {
   role    = "roles/resourcemanager.projectIamAdmin"
   member  = "serviceAccount:${google_service_account.terraform_provisioner.email}"
 }
+resource "google_project_iam_member" "network" {
+  project = var.gcp_project_id
+  role    = "roles/compute.networkViewer"
+  member  = "serviceAccount:${google_service_account.terraform_provisioner.email}"
+}
+resource "google_project_iam_member" "memorystore_redis" {
+  project = var.gcp_project_id
+  role    = "roles/redis.admin"
+  member  = "serviceAccount:${google_service_account.terraform_provisioner.email}"
+}
 /*resource "google_project_iam_member" "apphub" {
   project = var.gcp_project_id
   role    = "roles/apphub.editor"

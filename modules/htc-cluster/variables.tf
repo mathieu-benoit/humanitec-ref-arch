@@ -1,3 +1,8 @@
+variable "org_id" {
+  description = "ID of the Humanitec Organization"
+  type        = string
+}
+
 variable "id" {
   type        = string
   description = "ID of the GKE cluster resource"

@@ -19,9 +19,11 @@
 | [humanitec_resource_definition.agent](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition) | resource |
 | [humanitec_resource_definition.cluster_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition) | resource |
 | [humanitec_resource_definition.k8s_cluster](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition) | resource |
+| [humanitec_resource_definition.opentofu_runner_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition) | resource |
 | [humanitec_resource_definition_criteria.agent](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.cluster_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.k8s_cluster](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
+| [humanitec_resource_definition_criteria.opentofu_runner_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 
 ## Inputs
 
@@ -35,6 +37,7 @@
 | load\_balancer | The Load Balancer of the EKS cluster | `string` | n/a | yes |
 | name | GKE cluster name | `string` | n/a | yes |
 | operator\_public\_key | The public key of the Operator. | `string` | n/a | yes |
+| org\_id | ID of the Humanitec Organization | `string` | n/a | yes |
 | project\_id | GCP Project ID | `string` | n/a | yes |
 | project\_number | GCP Project number | `string` | n/a | yes |
 | region | GCP Region | `string` | n/a | yes |

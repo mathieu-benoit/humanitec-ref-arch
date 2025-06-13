@@ -19,6 +19,7 @@ module "gcp_cluster" {
 module "htc_cluster" {
   source = "./modules/htc-cluster"
 
+  org_id                    = var.org_id
   id                        = module.gcp_cluster.cloud_account_id
   env_types                 = var.env_types
   region                    = var.clusters[0].region
@@ -50,6 +51,7 @@ module "apps" {
   app_name                  = each.value.name
   cost_center               = each.value.cost_center
   gcp_project_id            = each.value.gcp_project_id
+  gcp_region                = var.clusters[0].region
   env_types                 = var.env_types
   viewer_users              = each.value.viewer_users
   resource_quota            = each.value.resource_quota

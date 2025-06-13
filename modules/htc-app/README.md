@@ -40,6 +40,7 @@
 | cost\_center | Cost Center ID | `string` | n/a | yes |
 | env\_types | n/a | <pre>list(object({<br/>    id          = string<br/>    description = string<br/>  }))</pre> | n/a | yes |
 | gcp\_project\_id | Google Cloud Project ID | `string` | n/a | yes |
+| gcp\_region | Google Cloud Project region | `string` | n/a | yes |
 | gcp\_wi\_pool\_provider\_name | The Workload Identity Pool Provider name to access the GKE cluster from Humanitec. | `string` | n/a | yes |
 | envs | n/a | <pre>list(object({<br/>    id   = string<br/>    name = string<br/>    type = string<br/>  }))</pre> | <pre>[<br/>  {<br/>    "id": "development",<br/>    "name": "development",<br/>    "type": "development"<br/>  },<br/>  {<br/>    "id": "staging",<br/>    "name": "staging",<br/>    "type": "staging"<br/>  },<br/>  {<br/>    "id": "production",<br/>    "name": "production",<br/>    "type": "production"<br/>  }<br/>]</pre> | no |
 | resource\_quota | n/a | <pre>object({<br/>    limits-cpu    = string<br/>    limits-memory = string<br/>  })</pre> | `null` | no |

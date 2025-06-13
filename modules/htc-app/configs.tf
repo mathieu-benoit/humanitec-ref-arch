@@ -4,15 +4,17 @@ locals {
 }
 
 resource "humanitec_resource_definition" "app_config" {
-  driver_type = "humanitec/echo"
-  id          = "${var.app_id}-config"
-  name        = "${var.app_id}-config"
-  type        = "config"
+  driver_type    = "humanitec/echo"
+  id             = "${var.app_id}-config"
+  name           = "${var.app_id}-config"
+  type           = "config"
+  driver_account = var.cloud_account_id
   driver_inputs = {
     values_string = jsonencode({
       "app_name"       = var.app_name
       "cost_center"    = var.cost_center
       "gcp_project_id" = var.gcp_project_id
+      "gcp_region"     = var.gcp_region
     })
   }
 }
