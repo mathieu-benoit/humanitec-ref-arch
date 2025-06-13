@@ -6,6 +6,9 @@ resource "humanitec_resource_definition" "gcs_member" {
   driver_account = "$${resources['config.default#app'].account}"
   driver_inputs = {
     values_string = jsonencode({
+      "runner" = {
+        "image" = local.opentofu_container_image
+      }
       "source" = {
         "ref"  = "refs/heads/main"
         "url"  = "https://github.com/mathieu-benoit/terraform-modules-samples.git"
