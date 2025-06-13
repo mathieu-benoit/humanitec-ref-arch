@@ -1,0 +1,12 @@
+
+# ID of the Humanitec Application
+app_id = ""
+
+# Google Cloud Project ID
+gcp_project_id = ""
+
+# The Workload Identity Pool name to access the GCP Project from Humanitec.
+gcp_wi_pool_name = ""
+
+# ID of the Humanitec Organization
+org_id = ""

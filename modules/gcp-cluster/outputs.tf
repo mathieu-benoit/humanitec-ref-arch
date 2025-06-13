@@ -15,8 +15,11 @@ output "load_balancer" {
 }
 
 output "gcp_wi_pool_provider_name" {
-  value     = google_iam_workload_identity_pool_provider.gke_cluster_access.name
-  sensitive = true
+  value = google_iam_workload_identity_pool_provider.gke_cluster_access.name
+}
+
+output "gcp_wi_pool_name" {
+  value = google_iam_workload_identity_pool.gke_cluster_access.name
 }
 
 output "cluster_access_gsa_email" {

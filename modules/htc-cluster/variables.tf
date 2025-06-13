@@ -56,5 +56,4 @@ variable "cluster_access_gsa_email" {
 variable "gcp_wi_pool_provider_name" {
   description = "The Workload Identity Pool Provider name to access the GKE cluster from Humanitec."
   type        = string
-  sensitive   = true
 }

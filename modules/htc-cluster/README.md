@@ -1,4 +1,4 @@
-# Cluster level Terraform Module
+# Humanitec Cluster level Terraform Module
 
 <!-- BEGIN_TF_DOCS -->
 

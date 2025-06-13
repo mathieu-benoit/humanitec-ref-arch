@@ -105,6 +105,7 @@ You can also use this token locally (`HUMANITEC_TOKEN`) and run `humctl score de
 | Name | Source | Version |
 |------|--------|---------|
 | apps | ./modules/htc-app | n/a |
+| gcp\_app | ./modules/gcp-app | n/a |
 | gcp\_cluster | ./modules/gcp-cluster | n/a |
 | htc\_cluster | ./modules/htc-cluster | n/a |
 | org | ./modules/htc-org | n/a |

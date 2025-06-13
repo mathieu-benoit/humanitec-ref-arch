@@ -5,6 +5,12 @@ app_id = ""
 # Name of the Humanitec Application
 app_name = ""
 
+# Google Cloud Service Account email address to provision cloud infrastructure
+cloud_account_gsa_email = ""
+
+# Google Cloud Service Account ID to provision cloud infrastructure
+cloud_account_id = ""
+
 # Cost Center ID
 cost_center = ""
 
@@ -29,6 +35,9 @@ envs = [
 
 # Google Cloud Project ID
 gcp_project_id = ""
+
+# The Workload Identity Pool Provider name to access the GKE cluster from Humanitec.
+gcp_wi_pool_provider_name = ""
 
 resource_quota = ""
 viewer_users   = []

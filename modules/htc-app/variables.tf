@@ -64,3 +64,18 @@ variable "resource_quota" {
   })
   default = null
 }
+
+variable "cloud_account_gsa_email" {
+  description = "Google Cloud Service Account email address to provision cloud infrastructure"
+  type        = string
+}
+
+variable "cloud_account_id" {
+  description = "Google Cloud Service Account ID to provision cloud infrastructure"
+  type        = string
+}
+
+variable "gcp_wi_pool_provider_name" {
+  description = "The Workload Identity Pool Provider name to access the GKE cluster from Humanitec."
+  type        = string
+}

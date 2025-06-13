@@ -1,4 +1,4 @@
-locals {
+/*locals {
   dns_resource_type = "dns"
 }
 
@@ -21,4 +21,4 @@ resource "terracurl_request" "dns_resource_type" {
     "Authorization" = "Bearer ${var.token}"
     "Content-Type"  = "application/json"
   }
-}
+}*/
