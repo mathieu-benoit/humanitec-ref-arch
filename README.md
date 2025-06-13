@@ -2,17 +2,14 @@
 
 TODOs:
 - Arch diagram
-- GCP
-  - TF runner
 - HTC
-  - memorystore with OT
-  - gcs with WI
   - Backstage
   - apphub
 
-Terraform Blueprint to deploy the Humanitec resources based on 4 different Terraform Modules:
+Terraform Blueprint to deploy the Humanitec resources based on 5 different Terraform Modules:
 - Google Cloud
-  - [GKE Terraform Module](../modules/gcp-cluster/README.md)
+  - [GKE(s) Terraform Module](../modules/gcp-cluster/README.md)
+  - [App(s) Terraform Module](../modules/gcp-app/README.md)
 - Humanitec
   - [Org level Terraform Module](../modules/htc-org/README.md)
   - [Cluster(s) level Terraform Module](../modules/htc-cluster/README.md)
@@ -135,12 +132,14 @@ humctl score available-resource-types
 ```
 
 ```none
-Name                    Type            Category        Class
-Environment             environment     score           default
-Service                 service         score           default
-Persistent Volume       volume          datastore       default
-Redis                   redis           datastore       default
-Route                   route           ingress         default
-TLS certificate         tls-cert        security        default
-Postgres                postgres        datastore       default
+Name                            Type            Category        Class
+Environment                     environment     score           default
+Service                         service         score           default
+Persistent Volume               volume          datastore       default
+Redis                           redis           datastore       default
+DNS                             dns             dns             default
+Route                           route           ingress         default
+Google Cloud Storage Bucket     gcs             datastore       default
+TLS certificate                 tls-cert        security        default
+Postgres                        postgres        datastore       default
 ```
