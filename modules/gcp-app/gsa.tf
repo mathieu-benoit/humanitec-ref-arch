@@ -33,3 +33,8 @@ resource "google_project_iam_member" "apphub" {
   role    = "roles/apphub.editor"
   member  = "serviceAccount:${google_service_account.terraform_provisioner.email}"
 }
+resource "google_project_iam_member" "pubsub_topic" {
+  project = var.gcp_project_id
+  role    = "roles/pubsub.admin"
+  member  = "serviceAccount:${google_service_account.terraform_provisioner.email}"
+}

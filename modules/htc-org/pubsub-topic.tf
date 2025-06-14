@@ -1,0 +1,42 @@
+resource "humanitec_resource_definition" "pubsub_topic" {
+  driver_type    = "humanitec/opentofu-container-runner"
+  id             = "pubsub-topic"
+  name           = "pubsub-topic"
+  type           = "gcp-pubsub-topic"
+  driver_account = "$${resources['config.default#app'].account}"
+  driver_inputs = {
+    values_string = jsonencode({
+      "runner" = {
+        "image" = local.opentofu_container_image
+      }
+      "source" = {
+        "ref"  = "refs/heads/main"
+        "url"  = "https://github.com/mathieu-benoit/terraform-modules-samples.git"
+        "path" = "gcp-pubsub-topic"
+      }
+      "variables" = {
+        "app_id"     = "$${context.app.id}"
+        "env_id"     = "$${context.env.id}"
+        "res_id"     = "$${context.res.id}"
+        "project_id" = "$${resources['config.default#app'].outputs.gcp_project_id}"
+        "region"     = "$${resources['config.default#app'].outputs.gcp_region}"
+      }
+      "use_default_backend" = true
+      "credentials_config" = {
+        "variables" = {
+          "access_token" = "access_token"
+        }
+      }
+    })
+  }
+  provision = {
+    "gcp-iam-policy-binding.pubsub-topic-default" = {
+      is_dependent     = true
+      match_dependents = false
+    }
+  }
+}
+
+resource "humanitec_resource_definition_criteria" "pubsub_topic" {
+  resource_definition_id = resource.humanitec_resource_definition.pubsub_topic.id
+}
