@@ -11,6 +11,13 @@ resource "google_project_service" "cloudresourcemanager" {
   service = "cloudresourcemanager.googleapis.com"
 }
 
+/* Implicit GCP services used */
+
+resource "google_project_service" "apphub" {
+  project = var.gcp_project_id
+  service = "apphub.googleapis.com"
+}
+
 /* For resource types supported for the Devs */
 
 resource "google_project_service" "memorystore_redis" {

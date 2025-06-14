@@ -13,6 +13,7 @@
 
 | Name | Type |
 |------|------|
+| [google_project_iam_member.apphub](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
 | [google_project_iam_member.gcs](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
 | [google_project_iam_member.iammember](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
 | [google_project_iam_member.memorystore_redis](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |

@@ -3,7 +3,6 @@
 ![](./humanitec-ref-arch.png)
 
 Terraform Blueprint to deploy the Humanitec resources based on 5 different Terraform Modules:
-- [Main Terraform Module](./modules/README.md)
 - Google Cloud
   - [GKE(s) Terraform Module](./modules/gcp-cluster/README.md)
   - [App(s) Terraform Module](./modules/gcp-app/README.md)
