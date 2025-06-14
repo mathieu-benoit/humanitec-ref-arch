@@ -1,7 +1,7 @@
 formatter: "markdown table"
 
 output:
-  file: "./modules/README.md"
+  file: "./README.md"
 
 sort:
   enabled: true
