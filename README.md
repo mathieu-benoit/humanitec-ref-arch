@@ -1,7 +1,8 @@
 [![CI](https://github.com/mathieu-benoit/humanitec-ref-arch/actions/workflows/ci.yaml/badge.svg)](https://github.com/mathieu-benoit/humanitec-ref-arch/actions/workflows/ci.yaml)
 
+![](./humanitec-ref-arch.png)
+
 TODOs:
-- Arch diagram
 - HTC
   - PubSub
   - Cloud SQL
