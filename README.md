@@ -101,6 +101,9 @@ TLS certificate                 tls-cert        security        default
 Postgres                        postgres        datastore       default
 Google Cloud Vertex AI          gcp-vertex-ai                   default
 ```
+
+# Main Terraform Blueprint documentation
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
