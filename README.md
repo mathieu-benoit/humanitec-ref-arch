@@ -3,6 +3,8 @@
 TODOs:
 - Arch diagram
 - HTC
+  - PubSub
+  - Cloud SQL
   - Backstage
   - apphub
 
@@ -142,4 +144,5 @@ Route                           route           ingress         default
 Google Cloud Storage Bucket     gcs             datastore       default
 TLS certificate                 tls-cert        security        default
 Postgres                        postgres        datastore       default
+Google Cloud Vertex AI          gcp-vertex-ai                   default
 ```
