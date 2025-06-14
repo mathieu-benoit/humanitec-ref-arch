@@ -89,18 +89,19 @@ humctl score available-resource-types
 ```
 
 ```none
-Name                            Type                    Category        Class
-Environment                     environment             score           default
-Service                         service                 score           default
-Persistent Volume               volume                  datastore       default
-Redis                           redis                   datastore       default
-DNS                             dns                     dns             default
-Route                           route                   ingress         default
-Google Cloud Storage Bucket     gcs                     datastore       default
-TLS certificate                 tls-cert                security        default
-Google Cloud Pub/Sub Topic      gcp-pubsub-topic        messaging       default
-Postgres                        postgres                datastore       default
-Google Cloud Vertex AI          gcp-vertex-ai                           default
+Name                                    Type                    Category        Class
+Environment                             environment             score           default
+Service                                 service                 score           default
+Google Cloud Pub/Sub Subscription       gcp-pubsub-subscription messaging       default
+Persistent Volume                       volume                  datastore       default
+Redis                                   redis                   datastore       default
+DNS                                     dns                     dns             default
+Route                                   route                   ingress         default
+Google Cloud Storage Bucket             gcs                     datastore       default
+TLS certificate                         tls-cert                security        default
+Google Cloud Pub/Sub Topic              gcp-pubsub-topic        messaging       default
+Postgres                                postgres                datastore       default
+Google Cloud Vertex AI                  gcp-vertex-ai                           default
 ```
 
 # Main Terraform Blueprint documentation
