@@ -2,7 +2,7 @@ locals {
   apphub_app_resource_type = "gcp-apphub-app"
 }
 
-resource "terracurl_request" "apphub_app_resource_type" {
+/*resource "terracurl_request" "apphub_app_resource_type" {
   name = "apphub_app_resource_type"
 
   url            = "https://api.humanitec.io/orgs/${var.org_id}/resources/types"
@@ -21,4 +21,4 @@ resource "terracurl_request" "apphub_app_resource_type" {
     "Authorization" = "Bearer ${var.token}"
     "Content-Type"  = "application/json"
   }
-}
+}*/
