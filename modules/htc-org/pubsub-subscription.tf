@@ -1,5 +1,5 @@
 resource "humanitec_resource_definition" "pubsub_subscription" {
-  driver_type    = "humanitec/opentofu-container-runner"
+  driver_type    = "mabenoit-demo/my-opentofu-container-runner"
   id             = "pubsub-subscription"
   name           = "pubsub-subscription"
   type           = "gcp-pubsub-subscription"
@@ -19,7 +19,6 @@ resource "humanitec_resource_definition" "pubsub_subscription" {
         "env_id"     = "$${context.env.id}"
         "res_id"     = "$${context.res.id}"
         "project_id" = "$${resources['config.default#app'].outputs.gcp_project_id}"
-        "region"     = "$${resources['config.default#app'].outputs.gcp_region}"
       }
       "use_default_backend" = true
       "credentials_config" = {
