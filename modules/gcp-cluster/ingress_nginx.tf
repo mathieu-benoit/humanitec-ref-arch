@@ -24,43 +24,41 @@ resource "helm_release" "ingress_nginx" {
   wait       = true
   timeout    = 300
 
-  set {
-    name  = "controller.service.loadBalancerIP"
-    value = google_compute_address.public_ingress.address
-  }
+  set = [
+    {
+      name  = "controller.service.loadBalancerIP"
+      value = google_compute_address.public_ingress.address
+    },
+    {
+      name  = "controller.containerSecurityContext.runAsUser"
+      value = 101
+    },
+    {
+      name  = "controller.containerSecurityContext.runAsGroup"
+      value = 101
+    },
+    {
+      name  = "controller.containerSecurityContext.allowPrivilegeEscalation"
+      value = false
+    },
+    {
+      name  = "controller.containerSecurityContext.readOnlyRootFilesystem"
+      value = false
+    },
+    {
+      name  = "controller.containerSecurityContext.runAsNonRoot"
+      value = true
+    }
+  ]
 
-  set {
-    name  = "controller.containerSecurityContext.runAsUser"
-    value = 101
-  }
-
-  set {
-    name  = "controller.containerSecurityContext.runAsGroup"
-    value = 101
-  }
-
-  set {
-    name  = "controller.containerSecurityContext.allowPrivilegeEscalation"
-    value = false
-  }
-
-  set {
-    name  = "controller.containerSecurityContext.readOnlyRootFilesystem"
-    value = false
-  }
-
-  set {
-    name  = "controller.containerSecurityContext.runAsNonRoot"
-    value = true
-  }
-
-  set_list {
-    name  = "controller.containerSecurityContext.capabilities.drop"
-    value = ["ALL"]
-  }
-
-  set_list {
-    name  = "controller.containerSecurityContext.capabilities.add"
-    value = ["NET_BIND_SERVICE"]
-  }
+  set_list = [
+    {
+      name  = "controller.containerSecurityContext.capabilities.drop"
+      value = ["ALL"]
+    },
+    {
+      name  = "controller.containerSecurityContext.capabilities.add"
+      value = ["NET_BIND_SERVICE"]
+    }
+  ]
 }

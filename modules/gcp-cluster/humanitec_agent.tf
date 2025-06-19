@@ -22,33 +22,33 @@ resource "helm_release" "humanitec_agent" {
   wait       = true
   timeout    = 300
 
-  set {
-    name  = "humanitec.org"
-    value = var.org_id
-  }
+  set = [
+    {
+      name  = "humanitec.org"
+      value = var.org_id
+    },
+    {
+      name  = "podSecurityContext.fsGroup"
+      value = "65532"
+    },
+    {
+      name  = "podSecurityContext.runAsGroup"
+      value = "65532"
+    },
+    {
+      name  = "podSecurityContext.runAsUser"
+      value = "65532"
+    },
+    {
+      name  = "image.repository"
+      value = "ghcr.io/humanitec/agent"
+    }
+  ]
 
-  set {
-    name  = "podSecurityContext.fsGroup"
-    value = "65532"
-  }
-
-  set {
-    name  = "podSecurityContext.runAsGroup"
-    value = "65532"
-  }
-
-  set {
-    name  = "podSecurityContext.runAsUser"
-    value = "65532"
-  }
-
-  set_sensitive {
-    name  = "humanitec.privateKey"
-    value = tls_private_key.agent.private_key_pem
-  }
-
-  set {
-    name  = "image.repository"
-    value = "ghcr.io/humanitec/agent"
-  }
+  set_sensitive = [
+    {
+      name  = "humanitec.privateKey"
+      value = tls_private_key.agent.private_key_pem
+    }
+  ]
 }

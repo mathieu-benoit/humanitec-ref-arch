@@ -27,30 +27,28 @@ resource "helm_release" "humanitec_operator" {
   wait       = true
   timeout    = 300
 
-  set {
-    name  = "controllerManager.kubeRbacProxy.image.repository"
-    value = "gcr.io/kubebuilder/kube-rbac-proxy"
-  }
-
-  set {
-    name  = "controllerManager.manager.image.repository"
-    value = "ghcr.io/humanitec/operator"
-  }
-
-  set {
-    name  = "controllerManager.podSecurityContext.fsGroup"
-    value = "65532"
-  }
-
-  set {
-    name  = "controllerManager.podSecurityContext.runAsGroup"
-    value = "65532"
-  }
-
-  set {
-    name  = "controllerManager.podSecurityContext.runAsUser"
-    value = "65532"
-  }
+  set = [
+    {
+      name  = "controllerManager.kubeRbacProxy.image.repository"
+      value = "gcr.io/kubebuilder/kube-rbac-proxy"
+    },
+    {
+      name  = "controllerManager.manager.image.repository"
+      value = "ghcr.io/humanitec/operator"
+    },
+    {
+      name  = "controllerManager.podSecurityContext.fsGroup"
+      value = "65532"
+    },
+    {
+      name  = "controllerManager.podSecurityContext.runAsGroup"
+      value = "65532"
+    },
+    {
+      name  = "controllerManager.podSecurityContext.runAsUser"
+      value = "65532"
+    }
+  ]
 }
 
 resource "kubernetes_secret" "humanitec_operator" {

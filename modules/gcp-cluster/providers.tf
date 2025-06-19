@@ -24,7 +24,7 @@ provider "google" {
 }
 
 provider "helm" {
-  kubernetes {
+  kubernetes = {
     host  = "https://${data.google_container_cluster.gke_cluster.endpoint}"
     token = data.google_client_config.default.access_token
     cluster_ca_certificate = base64decode(
