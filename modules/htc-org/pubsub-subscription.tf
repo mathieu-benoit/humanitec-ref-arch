@@ -1,5 +1,5 @@
 resource "humanitec_resource_definition" "pubsub_subscription" {
-  driver_type    = "mabenoit-demo/my-opentofu-container-runner"
+  driver_type    = "humanitec/opentofu-container-runner"
   id             = "pubsub-subscription"
   name           = "pubsub-subscription"
   type           = "gcp-pubsub-subscription"
