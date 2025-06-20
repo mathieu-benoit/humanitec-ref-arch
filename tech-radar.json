@@ -86,19 +86,19 @@
     },
     {
       "id": "preview",
-      "name": "PREVIEW",
+      "name": "Preview",
       "color": "#009EB0",
       "description": "In preview, not yet for Production."
     },
     {
       "id": "roadmap",
-      "name": "roadmap",
+      "name": "Roadmap",
       "color": "#C7BA00",
       "description": "In the roadmap, coming soon."
     },
     {
       "id": "not-supported",
-      "name": "NOT SUPPORTED",
+      "name": "Not supported",
       "color": "#E09B96",
       "description": "Not supported, find an alternative."
     }
