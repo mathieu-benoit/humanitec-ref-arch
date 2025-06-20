@@ -4,199 +4,103 @@
       "timeline": [
         {
           "moved": 0,
-          "ringId": "adopt",
-          "date": "2020-08-06T00:00:00.000Z",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
-        }
-      ],
-      "key": "javascript",
-      "id": "javascript",
-      "title": "JavaScript",
-      "quadrant": "languages",
-      "links": [
-        {
-          "url": "https://www.javascript.com/",
-          "title": "Learn more"
-        },
-        {
-          "url": "https://www.typescriptlang.org/",
-          "title": "TypeScript"
-        }
-      ],
-      "description": "Excepteur **sint** occaecat *cupidatat* non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n```ts\nconst x = \"3\";\n```\n"
-    },
-    {
-      "timeline": [
-        {
-          "moved": -1,
-          "ringId": "adopt",
-          "date": "2020-08-06T00:00:00.000Z",
-          "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
-        }
-      ],
-      "key": "typescript",
-      "id": "typescript",
-      "title": "TypeScript",
-      "quadrant": "languages",
-      "description": "Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat"
-    },
-    {
-      "timeline": [
-        {
-          "moved": 1,
-          "ringId": "adopt",
-          "date": "2020-08-06T00:00:00.000Z",
-          "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
         }
       ],
       "links": [
         {
-          "url": "https://webpack.js.org/",
-          "title": "Learn more"
+          "url": "https://github.com/mathieu-benoit/sail-sharp/blob/main/app/Dockerfile",
+          "title": "Example"
         }
       ],
-      "key": "webpack",
-      "id": "webpack",
-      "title": "Webpack",
-      "quadrant": "frameworks"
+      "key": "nodejs",
+      "id": "nodejs",
+      "title": "NodeJS",
+      "quadrant": "containers",
+      "description": "NodeJS 20 and 22"
     },
     {
       "timeline": [
         {
           "moved": 0,
-          "ringId": "adopt",
-          "date": "2020-08-06T00:00:00.000Z"
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
         }
       ],
       "links": [
         {
-          "url": "https://reactjs.org/",
-          "title": "Learn more"
+          "url": "https://github.com/mathieu-benoit/sail-sharp/blob/main/app/Dockerfile",
+          "title": "Example"
         }
       ],
-      "key": "react",
-      "id": "react",
-      "title": "React",
-      "quadrant": "frameworks"
+      "key": "dotnet",
+      "id": "dotnet",
+      "title": ".NET",
+      "quadrant": "containers",
+      "description": ".NET 9"
     },
     {
       "timeline": [
         {
-          "moved": 0,
-          "ringId": "adopt",
-          "date": "2020-08-06T00:00:00.000Z"
-        }
-      ],
-      "key": "code-reviews",
-      "id": "code-reviews",
-      "title": "Code Reviews",
-      "quadrant": "process"
-    },
-    {
-      "timeline": [
-        {
-          "moved": 0,
-          "ringId": "assess",
-          "date": "2020-08-06T00:00:00.000Z"
-        }
-      ],
-      "key": "mob-programming",
-      "id": "mob-programming",
-      "title": "Mob Programming",
-      "quadrant": "process"
-    },
-    {
-      "timeline": [
-        {
-          "moved": 0,
-          "ringId": "adopt",
-          "date": "2020-08-06T00:00:00.000Z"
-        }
-      ],
-      "key": "docs-like-code",
-      "id": "docs-like-code",
-      "title": "Docs-like-code",
-      "quadrant": "process"
-    },
-    {
-      "timeline": [
-        {
-          "ringId": "hold",
-          "date": "2020-08-06T00:00:00.000Z"
-        }
-      ],
-      "key": "force-push",
-      "id": "force-push",
-      "title": "Force push to master",
-      "quadrant": "process"
-    },
-    {
-      "timeline": [
-        {
-          "ringId": "adopt",
-          "date": "2020-08-06T00:00:00.000Z",
-          "description": "long description"
-        },
-        {
-          "ringId": "trial",
-          "date": "2020-07-05T00:00:00.000Z",
-          "description": "long description"
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
         }
       ],
       "links": [
         {
-          "url": "https://github.com",
-          "title": "Learn more"
+          "url": "https://github.com/mathieu-benoit/sail-sharp/tree/main/.github/workflows",
+          "title": "Templates"
         }
       ],
       "key": "github-actions",
       "id": "github-actions",
       "title": "GitHub Actions",
-      "quadrant": "infrastructure"
+      "quadrant": "tools"
     }
   ],
   "quadrants": [
     {
-      "id": "infrastructure",
-      "name": "Infrastructure"
+      "id": "resources",
+      "name": "Resources"
     },
     {
-      "id": "frameworks",
-      "name": "Frameworks"
+      "id": "tools",
+      "name": "Tools"
     },
     {
-      "id": "languages",
-      "name": "Languages"
+      "id": "containers",
+      "name": "containers"
     },
     {
-      "id": "process",
-      "name": "Process"
+      "id": "security",
+      "name": "Security"
     }
   ],
   "rings": [
     {
-      "id": "adopt",
-      "name": "ADOPT",
+      "id": "ga",
+      "name": "GA",
       "color": "#5BA300",
-      "description": "Commodi accusantium culpa sed itaque excepturi rem eum nulla possimus."
+      "description": "Generally available, ready for Production."
     },
     {
-      "id": "trial",
-      "name": "TRIAL",
+      "id": "preview",
+      "name": "PREVIEW",
       "color": "#009EB0",
-      "description": "Recusandae possimus ipsum dolores."
+      "description": "In preview, not yet for Production."
     },
     {
-      "id": "assess",
-      "name": "ASSESS",
+      "id": "roadmap",
+      "name": "roadmap",
       "color": "#C7BA00",
-      "description": "In asperiores repellat error recusandae et adipisci laborum porro."
+      "description": "In the roadmap, coming soon."
     },
     {
-      "id": "hold",
-      "name": "HOLD",
+      "id": "not-supported",
+      "name": "NOT SUPPORTED",
       "color": "#E09B96",
-      "description": "Esse mollitia in."
+      "description": "Not supported, find an alternative."
     }
   ]
 }
