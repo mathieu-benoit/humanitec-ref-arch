@@ -57,7 +57,7 @@
       "key": "java",
       "id": "java",
       "title": "Java",
-      "description": "Java 21"
+      "description": "Java 21",
       "quadrant": "containers"
     },
     {
@@ -77,7 +77,7 @@
       "key": "python",
       "id": "python",
       "title": "Python",
-      "description": "Python 3.12"
+      "description": "Python 3.12",
       "quadrant": "containers"
     },
     {
@@ -97,7 +97,7 @@
       "key": "golang",
       "id": "golang",
       "title": "Golang",
-      "description": "Go 1.23"
+      "description": "Go 1.23",
       "quadrant": "containers"
     },
     {
@@ -117,7 +117,7 @@
       "key": "nginx",
       "id": "nginx",
       "title": "Nginx",
-      "description": "Nginx 3.12"
+      "description": "Nginx 3.12",
       "quadrant": "containers"
     },
     {
