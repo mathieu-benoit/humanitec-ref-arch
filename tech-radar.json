@@ -165,6 +165,46 @@
       "title": "NodeJS",
       "quadrant": "containers",
       "description": "NodeJS 20 and 22"
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://developer.humanitec.com/platform-orchestrator/examples/score/environment-variables/",
+          "title": "Example"
+        }
+      ],
+      "key": "service",
+      "id": "service",
+      "title": "Service",
+      "quadrant": "resources",
+      "description": "Service is the way to reference to another Workload in the same Environment. Inputs: N/A. Outputs: name."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://developer.humanitec.com/platform-orchestrator/docs/platform-orchestrator/reference/resource-types/#gcp-pubsub-subscription",
+          "title": "Example"
+        }
+      ],
+      "key": "gcp-pubsub-subscription",
+      "id": "gcp-pubsub-subscription",
+      "title": "Google Cloud Pub/Sub Subscription",
+      "quadrant": "resources",
+      "description": "Google Cloud Pub/Sub Subscription. Inputs: topic. Outputs: name, topic."
     }
   ],
   "quadrants": [
