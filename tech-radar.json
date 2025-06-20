@@ -63,7 +63,8 @@
       "timeline": [
         {
           "moved": 0,
-          "ringId": "coming"
+          "ringId": "coming",
+          "date": "2025-06-06T00:00:00.000Z"
         }
       ],
       "key": "rust",
@@ -75,7 +76,8 @@
       "timeline": [
         {
           "moved": 0,
-          "ringId": "not-supported"
+          "ringId": "not-supported",
+          "date": "2025-06-06T00:00:00.000Z"
         }
       ],
       "key": "cobol",
