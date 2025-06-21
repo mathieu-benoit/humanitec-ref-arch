@@ -593,6 +593,96 @@
       "title": "Dapr",
       "quadrant": "tools",
       "description": "Dapr (StateStore, PubSub) is not yet supported, coming soon..."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "preview",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "key": "istio",
+      "id": "istio",
+      "title": "Istio",
+      "quadrant": "tools",
+      "description": "Istio is in active test to be seamlessly integrated when you deploy your Workloads. Coming soon..."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://kubernetes.io/docs/concepts/security/pod-security-standards/",
+          "title": "More info"
+        }
+      ],
+      "key": "pss",
+      "id": "pss",
+      "title": "PSS",
+      "quadrant": "security",
+      "description": "Pod Security Standard (Restricted) is enforced in all your Environments where your deploy your Workloads. This is enforcing that any Workloads run as unprivilged, etc."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "key": "wi",
+      "id": "wi",
+      "title": "Workload Identity",
+      "quadrant": "security",
+      "description": "GKE Workload Identity is injected by default as soon as your Workloads use GCS, Vertex AI and Google PubSub Topic or Subscription. Secure by default and design, no need to manage long live token keys, etc."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "preview",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "key": "network-policies",
+      "id": "network-policies",
+      "title": "Network Policies",
+      "quadrant": "security",
+      "description": "Kubernetes Network Policies are automatically injected in each Namespace when you Deploy your Workloads. This guarantee a segmentation between the different projects and environments. Soon, we will also enforce more granular communication between Workloads too. More update on this soon..."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "coming",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "key": "waf",
+      "id": "waf",
+      "title": "WAF",
+      "quadrant": "security",
+      "description": "Google Cloud Armor on top of the DNS of your Workloads will be soon implemented. Coming soon..."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "coming",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "key": "internal-dns",
+      "id": "internal-dns",
+      "title": "Internal DNS",
+      "quadrant": "security",
+      "description": "Just public DNS is supported today, we will come soon with the option to request internal DNS to expose internal-only Workloads."
     }
   ],
   "quadrants": [
