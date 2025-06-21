@@ -82,7 +82,11 @@ terraform output service_users_tokens
 
 You can also use this token locally (`HUMANITEC_TOKEN`) and run `humctl score deploy --app --env`
 
-# Available resource types for the Developers in their Score files
+# Tech Radar
+
+![](./tech-radar.png)
+
+To get the available resource types for the Developers in their Score files
 
 ```bash
 humctl score available-resource-types
