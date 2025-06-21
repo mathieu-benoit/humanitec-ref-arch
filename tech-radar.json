@@ -525,6 +525,74 @@
       "title": "Gateway API",
       "quadrant": "tools",
       "description": "Gateway API will replace our current Ingress Controller implementation when you want to expose your Workloads via a DNS. Coming soon..."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://developer.humanitec.com/platform-orchestrator/examples/score/jobs/",
+          "title": "Example"
+        }
+      ],
+      "key": "job",
+      "id": "job",
+      "title": "Job",
+      "quadrant": "tools",
+      "description": "You can deploy your Workloads as Jobs via Score."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "coming",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "key": "wasm",
+      "id": "wasm",
+      "title": "Wasm",
+      "quadrant": "tools",
+      "description": "Deploying your Wasm Workloads is not yet supported, coming soon..."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "coming",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://developer.humanitec.com/platform-orchestrator/examples/score/horizontal-pod-autoscaler/",
+          "title": "Horizontal Pod Autoscaler"
+        }
+      ],
+      "key": "keda",
+      "id": "keda",
+      "title": "KEDA",
+      "quadrant": "tools",
+      "description": "Autoscaling for your Workloads based on KEDA is not yet supported, coming soon... Use HPA in the meantime."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "coming",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "key": "dapr",
+      "id": "dapr",
+      "title": "Dapr",
+      "quadrant": "tools",
+      "description": "Dapr (StateStore, PubSub) is not yet supported, coming soon..."
     }
   ],
   "quadrants": [
