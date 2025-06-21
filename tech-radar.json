@@ -197,7 +197,7 @@
       "links": [
         {
           "url": "https://developer.humanitec.com/platform-orchestrator/docs/platform-orchestrator/reference/resource-types/#gcp-pubsub-subscription",
-          "title": "Example"
+          "title": "Definition"
         }
       ],
       "key": "gcp-pubsub-subscription",
@@ -285,6 +285,86 @@
       "title": "route",
       "quadrant": "resources",
       "description": "Still using Ingress, will switch to HttpRoute soon. More to come! Inputs: N/A. Outputs: host, path, port."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://developer.humanitec.com/platform-orchestrator/docs/platform-orchestrator/reference/resource-types/#gcs",
+          "title": "Definition"
+        }
+      ],
+      "key": "gcs",
+      "id": "gcs",
+      "title": "gcs",
+      "quadrant": "resources",
+      "description": "Google Cloud Storage Bucket. Inputs: N/A. Outputs: name."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://developer.humanitec.com/platform-orchestrator/docs/platform-orchestrator/reference/resource-types/#gcp-pubsub-topic",
+          "title": "Definition"
+        }
+      ],
+      "key": "gcp-pubsub-topic",
+      "id": "gcp-pubsub-topic",
+      "title": "gcp-pubsub-topic",
+      "quadrant": "resources",
+      "description": "Google Cloud Pub/Sub Topic. Inputs: N/A. Outputs: name."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://github.com/score-spec/examples/blob/main/resources/postgres/score.yaml",
+          "title": "Example"
+        }
+      ],
+      "key": "postgres",
+      "id": "postgres",
+      "title": "postgres",
+      "quadrant": "resources",
+      "description": "PostgreSQL. Inputs: N/A. Outputs: host, name, password, port, username."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://developer.humanitec.com/platform-orchestrator/docs/platform-orchestrator/reference/resource-types/#gcp-vertex-ai",
+          "title": "Definition"
+        }
+      ],
+      "key": "gcp-vertex-ai",
+      "id": "gcp-vertex-ai",
+      "title": "gcp-vertex-ai",
+      "quadrant": "resources",
+      "description": "Google Cloud Vertex AI. Inputs: N/A. Outputs: location, project."
     }
   ],
   "quadrants": [
