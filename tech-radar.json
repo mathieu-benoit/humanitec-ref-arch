@@ -370,21 +370,41 @@
       "timeline": [
         {
           "moved": 0,
+          "ringId": "coming",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://developer.humanitec.com/platform-orchestrator/docs/platform-orchestrator/reference/resource-types/#spanner",
+          "title": "Definition"
+        }
+      ],
+      "key": "spanner",
+      "id": "spanner",
+      "title": "spanner",
+      "quadrant": "resources",
+      "description": "Google Cloud Spanner database. Coming soon..."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
           "ringId": "ga",
           "date": "2025-06-06T00:00:00.000Z"
         }
       ],
       "links": [
         {
-          "url": "https://docs.score.dev/docs/score-implementation/score-compose/",
-          "title": "score-compose"
+          "url": "https://github.com/mathieu-benoit/sail-sharp/tree/main/.github/workflows",
+          "title": "Templates"
         }
       ],
-      "key": "docker-compose",
-      "id": "docker-compose",
-      "title": "Docker Compose",
+      "key": "gha",
+      "id": "gha",
+      "title": "GitHub Actions",
       "quadrant": "tools",
-      "description": "Docker Compose is supported via score-compose."
+      "description": "GitHub Actions is the tool used for your CI/CD."
     },
     {
       "timeline": [
@@ -442,7 +462,7 @@
       "id": "helm",
       "title": "Helm",
       "quadrant": "tools",
-      "description": "Helm is not supported to deploy your Workloads, please use Score instead."
+      "description": "Helm is not supported to deploy your Workloads, use Score instead."
     },
     {
       "timeline": [
@@ -456,7 +476,55 @@
       "id": "kustomize",
       "title": "Kustomize",
       "quadrant": "tools",
-      "description": "Kustomize is not supported to deploy your Workloads, please use Score instead."
+      "description": "Kustomize is not supported to deploy your Workloads, use Score instead."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "not-supported",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "key": "jenkins",
+      "id": "jenkins",
+      "title": "Jenkins",
+      "quadrant": "tools",
+      "description": "Jenkins is not supported for your CI/CD pipelines, use GitHub Actions instead."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://developer.humanitec.com/platform-orchestrator/examples/score/route/",
+          "title": "DNS & Route"
+        }
+      ],
+      "key": "ingress-controller",
+      "id": "ingress-controller",
+      "title": "Ingress Controller",
+      "quadrant": "tools",
+      "description": "Ingress Controller is supported by default if you want to expose your Workloads via a DNS."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "coming",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "key": "gateway-api",
+      "id": "gateway-api",
+      "title": "Gateway API",
+      "quadrant": "tools",
+      "description": "Gateway API will replace our current Ingress Controller implementation when you want to expose your Workloads via a DNS. Coming soon..."
     }
   ],
   "quadrants": [
