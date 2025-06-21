@@ -365,6 +365,98 @@
       "title": "gcp-vertex-ai",
       "quadrant": "resources",
       "description": "Google Cloud Vertex AI. Inputs: N/A. Outputs: location, project."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://docs.score.dev/docs/score-implementation/score-compose/",
+          "title": "score-compose"
+        }
+      ],
+      "key": "docker-compose",
+      "id": "docker-compose",
+      "title": "Docker Compose",
+      "quadrant": "tools",
+      "description": "Docker Compose is supported via score-compose."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://docs.score.dev/docs/score-implementation/score-compose/",
+          "title": "score-compose"
+        }
+      ],
+      "key": "docker-compose",
+      "id": "docker-compose",
+      "title": "Docker Compose",
+      "quadrant": "tools",
+      "description": "Docker Compose with your Score files is supported via score-compose."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://score.dev/",
+          "title": "Website"
+        },
+        {
+          "url": "https://docs.score.dev/docs/examples/",
+          "title": "Examples"
+        }
+      ],
+      "key": "score",
+      "id": "score",
+      "title": "Score",
+      "quadrant": "tools",
+      "description": "Score is the way to describe how you want to deploy your Workloads and their dependencies."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "not-supported",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "key": "helm",
+      "id": "helm",
+      "title": "Helm",
+      "quadrant": "tools",
+      "description": "Helm is not supported to deploy your Workloads, please use Score instead."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "not-supported",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "key": "kustomize",
+      "id": "kustomize",
+      "title": "Kustomize",
+      "quadrant": "tools",
+      "description": "Kustomize is not supported to deploy your Workloads, please use Score instead."
     }
   ],
   "quadrants": [
