@@ -265,26 +265,6 @@
       "title": "dns",
       "quadrant": "resources",
       "description": "Still using the default DNS, need to support both public and private DNS. More to come!"
-    },
-    {
-      "timeline": [
-        {
-          "moved": 0,
-          "ringId": "preview",
-          "date": "2025-06-06T00:00:00.000Z"
-        }
-      ],
-      "links": [
-        {
-          "url": "https://github.com/score-spec/examples/blob/main/resources/dns/score.yaml",
-          "title": "Example"
-        }
-      ],
-      "key": "dns",
-      "id": "dns",
-      "title": "dns",
-      "quadrant": "resources",
-      "description": "Still using the default DNS, need to support both public and private DNS. More to come!"
     }
   ],
   "quadrants": [
