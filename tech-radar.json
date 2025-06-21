@@ -182,7 +182,7 @@
       ],
       "key": "service",
       "id": "service",
-      "title": "Service",
+      "title": "service",
       "quadrant": "resources",
       "description": "Service is the way to reference to another Workload in the same Environment. Inputs: N/A. Outputs: name."
     },
@@ -202,9 +202,89 @@
       ],
       "key": "gcp-pubsub-subscription",
       "id": "gcp-pubsub-subscription",
-      "title": "Google Cloud Pub/Sub Subscription",
+      "title": "gcp-pubsub-subscription",
       "quadrant": "resources",
-      "description": "Google Cloud Pub/Sub Subscription. Inputs: topic. Outputs: name, topic."
+      "description": "Google Cloud Pub/Sub Subscription.\nInputs: topic.\nOutputs: name, topic."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "preview",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://developer.humanitec.com/platform-orchestrator/examples/score/volumes/",
+          "title": "Example"
+        }
+      ],
+      "key": "volume",
+      "id": "volume",
+      "title": "volume",
+      "quadrant": "resources",
+      "description": "Persistent Volume. Still in Preview because just emptyDir is supported as of today. More to come!"
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://github.com/score-spec/examples/blob/main/resources/redis/score.yaml",
+          "title": "Example"
+        }
+      ],
+      "key": "redis",
+      "id": "redis",
+      "title": "redis",
+      "quadrant": "resources",
+      "description": "Redis database. In-cluster Redis in Development, and Google Cloud Memorystore (Redis) for other environments."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "preview",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://github.com/score-spec/examples/blob/main/resources/dns/score.yaml",
+          "title": "Example"
+        }
+      ],
+      "key": "dns",
+      "id": "dns",
+      "title": "dns",
+      "quadrant": "resources",
+      "description": "Still using the default DNS, need to support both public and private DNS. More to come!"
+    },
+    {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "preview",
+          "date": "2025-06-06T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://github.com/score-spec/examples/blob/main/resources/dns/score.yaml",
+          "title": "Example"
+        }
+      ],
+      "key": "dns",
+      "id": "dns",
+      "title": "dns",
+      "quadrant": "resources",
+      "description": "Still using the default DNS, need to support both public and private DNS. More to come!"
     }
   ],
   "quadrants": [
@@ -248,7 +328,7 @@
       "id": "not-supported",
       "name": "Not supported",
       "color": "#E09B96",
-      "description": "Not supported, find an alternative."
+      "description": "We don't support it, find an alternative."
     }
   ]
 }
