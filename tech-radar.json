@@ -330,7 +330,7 @@
       "timeline": [
         {
           "moved": 0,
-          "ringId": "ga",
+          "ringId": "preview",
           "date": "2025-06-06T00:00:00.000Z"
         }
       ],
@@ -344,7 +344,7 @@
       "id": "postgres",
       "title": "postgres",
       "quadrant": "resources",
-      "description": "PostgreSQL. Inputs: N/A. Outputs: host, name, password, port, username."
+      "description": "In-cluster PostgreSQL. Still in Preview for now, Google Cloud SQL coming soon. Inputs: N/A. Outputs: host, name, password, port, username."
     },
     {
       "timeline": [
