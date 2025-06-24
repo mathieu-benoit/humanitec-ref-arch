@@ -60,7 +60,6 @@
 |------|-------------|------|---------|:--------:|
 | env\_types | n/a | <pre>list(object({<br/>    id          = string<br/>    description = string<br/>  }))</pre> | n/a | yes |
 | org\_id | ID of the Humanitec Organization | `string` | n/a | yes |
-| token | Token to authenticate to Humanitec (just use for terracurl\_request for custom resource types) | `string` | n/a | yes |
 
 ## Outputs
 

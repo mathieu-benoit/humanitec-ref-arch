@@ -2,7 +2,6 @@ module "org" {
   source = "./modules/htc-org"
 
   org_id    = var.org_id
-  token     = var.token
   env_types = var.env_types
 }
 
