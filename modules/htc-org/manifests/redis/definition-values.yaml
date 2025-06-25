@@ -50,7 +50,7 @@ templates:
                       - ALL
                   privileged: false
                   readOnlyRootFilesystem: true
-                image: redis:7.4.4-alpine
+                image: redis:8.0.2-alpine
                 resources:
                   limits:
                     cpu: 500m
