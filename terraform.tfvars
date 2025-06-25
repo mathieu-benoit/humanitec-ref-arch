@@ -14,8 +14,8 @@ apps = [
     gcp_project_id : "mabenoit-demo-458522",
     viewer_users : [],
     resource_quota : {
-      limits-cpu : "1.5k",
-      limits-memory : "1.5Gi"
+      limits-cpu : "2k",
+      limits-memory : "2Gi"
     }
   },
   {
