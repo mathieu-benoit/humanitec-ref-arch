@@ -50,7 +50,14 @@ templates:
                       - ALL
                   privileged: false
                   readOnlyRootFilesystem: true
-                image: redis:7-alpine
+                image: redis:7.4.4-alpine
+                resources:
+                  limits:
+                    cpu: 500m
+                    memory: 256Mi
+                  requests:
+                    cpu: 250m
+                    memory: 64Mi
                 ports:
                 - name: tcp-redis
                   containerPort: 6379
