@@ -1,6 +1,5 @@
 class: nginx
 host: ${resources.dns.outputs.host}
-tlsSecretName: ${resources.tls-cert.outputs.tls_secret_name}
 routePaths: ${resources.dns<route.outputs.path}
 routePorts: ${resources.dns<route.outputs.port}
 routeServices: ${resources.dns<route.outputs.service}
@@ -39,10 +38,6 @@ templates:
                     port:
                       number: {{ index $.driver.values.routePorts $index }}
               {{- end }}
-          tls:
-          - hosts:
-            - {{ .driver.values.host | toRawJson }}
-            secretName: {{ .driver.values.tlsSecretName | toRawJson }}
     {{- end -}}
   outputs: |
     id: {{ .id }}-ingress
