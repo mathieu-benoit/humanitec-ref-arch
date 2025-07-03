@@ -1,4 +1,5 @@
-class: nginx
+class: nginx-internal
+pathType: ImplementationSpecific
 host: ${resources.dns.outputs.host}
 routePaths: ${resources.dns<route.outputs.path}
 routePorts: ${resources.dns<route.outputs.port}
@@ -31,7 +32,7 @@ templates:
               paths:
               {{- range $index, $path := .driver.values.routePaths }}
               - path: {{ $path | toRawJson }}
-                pathType: {{ $.driver.values.path_type | default "Prefix" | toRawJson }}
+                pathType: {{ $.driver.values.pathType | default "Prefix" | toRawJson }}
                 backend:
                   service:
                     name: {{ index $.driver.values.routeServices $index | toRawJson }}
