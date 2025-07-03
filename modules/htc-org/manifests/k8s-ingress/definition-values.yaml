@@ -1,4 +1,4 @@
-class: nginx-internal
+ingressClassName: nginx-internal
 pathType: ImplementationSpecific
 host: ${resources.dns.outputs.host}
 routePaths: ${resources.dns<route.outputs.path}
@@ -23,8 +23,8 @@ templates:
           {{- end}}
           name: {{ .id }}-ingress
         spec:
-          {{- if .driver.values.class }}
-          ingressClassName: {{ .driver.values.class | toRawJson }}
+          {{- if .driver.values.ingressClassName }}
+          ingressClassName: {{ .driver.values.ingressClassName | toRawJson }}
           {{- end }}
           rules:
           - host: {{ .driver.values.host | toRawJson }}
