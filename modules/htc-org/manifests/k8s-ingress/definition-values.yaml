@@ -4,7 +4,6 @@ host: ${resources.dns.outputs.host}
 routePaths: ${resources.dns<route.outputs.path}
 routePorts: ${resources.dns<route.outputs.port}
 routeServices: ${resources.dns<route.outputs.service}
-# annotations: {}
 # labels: {}
 templates:
   manifests: |
@@ -15,8 +14,16 @@ templates:
         apiVersion: networking.k8s.io/v1
         kind: Ingress
         metadata:
-          {{- if hasKey .driver.values "annotations" }}
-          annotations: {{ .driver.values.annotations | toRawJson }}
+          {{- if or (eq .driver.values.class "ssl") (eq .driver.values.class "ssl-affinity") }}
+          annotations:
+            nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+            {{- if eq .driver.values.class "ssl-affinity" }}
+            nginx.ingress.kubernetes.io/affinity: "cookie"
+            nginx.ingress.kubernetes.io/affinity-mode: "persistent"
+            nginx.ingress.kubernetes.io/session-cookie-expires: "28800"
+            nginx.ingress.kubernetes.io/session-cookie-max-age: "28800"
+            nginx.ingress.kubernetes.io/session-cookie-name: "INGRESSCOOKIE"
+            {{- end }}
           {{- end}}
           {{- if hasKey .driver.values "labels" }}
           labels: {{ .driver.values.labels | toRawJson }}
