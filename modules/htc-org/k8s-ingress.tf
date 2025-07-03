@@ -1,12 +1,11 @@
 resource "humanitec_resource_definition" "ingress" {
-  driver_type = "humanitec/ingress"
+  driver_type = "humanitec/template"
   id          = "custom-ingress"
   name        = "custom-ingress"
   type        = "ingress"
+
   driver_inputs = {
-    values_string = jsonencode({
-      "class" = "nginx"
-    })
+    values_string = jsonencode(yamldecode(file("${path.module}/manifests/k8s-ingress/definition-values.yaml")))
   }
 }
 
