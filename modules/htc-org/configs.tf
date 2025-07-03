@@ -9,8 +9,8 @@ resource "humanitec_resource_definition" "quota_config" {
   type        = "config"
   driver_inputs = {
     values_string = jsonencode({
-      "limits-cpu"    = "250m"
-      "limits-memory" = "250Mi"
+      "limits-cpu"    = "256m"
+      "limits-memory" = "256Mi"
     })
   }
 }
