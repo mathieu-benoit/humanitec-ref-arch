@@ -1,0 +1,4 @@
+templates:
+  outputs: |
+    annotations:
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"

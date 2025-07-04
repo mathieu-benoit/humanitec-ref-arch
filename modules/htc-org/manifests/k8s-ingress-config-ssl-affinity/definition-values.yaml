@@ -1,0 +1,9 @@
+templates:
+  outputs: |
+    annotations:
+      nginx.ingress.kubernetes.io/affinity: "cookie"
+      nginx.ingress.kubernetes.io/affinity-mode: "persistent"
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+      nginx.ingress.kubernetes.io/session-cookie-expires: "28800"
+      nginx.ingress.kubernetes.io/session-cookie-max-age: "28800"
+      nginx.ingress.kubernetes.io/session-cookie-name: "INGRESSCOOKIE"
