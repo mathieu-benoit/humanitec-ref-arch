@@ -1,6 +1,6 @@
 resource "humanitec_resource_definition" "redis_in_cluster" {
   id          = "redis-in-cluster"
-  name        = "edis-in-cluster"
+  name        = "redis-in-cluster"
   type        = "redis"
   driver_type = "humanitec/template"
 

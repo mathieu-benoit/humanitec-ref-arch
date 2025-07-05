@@ -60,6 +60,7 @@
 |------|-------------|------|---------|:--------:|
 | env\_types | n/a | <pre>list(object({<br/>    id          = string<br/>    description = string<br/>  }))</pre> | n/a | yes |
 | org\_id | ID of the Humanitec Organization | `string` | n/a | yes |
+| token | Token to provision objects in Humanitec Organization | `string` | n/a | yes |
 
 ## Outputs
 

@@ -26,4 +26,5 @@ terraform {
 
 provider "humanitec" {
   org_id = var.org_id
+  token  = var.token
 }

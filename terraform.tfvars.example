@@ -20,3 +20,6 @@ humanitec_crds_already_installed = false
 
 # ID of the Humanitec Organization
 org_id = ""
+
+# Token to provision objects in Humanitec Organization
+token = ""
