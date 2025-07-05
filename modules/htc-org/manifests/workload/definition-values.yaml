@@ -1,5 +1,8 @@
 templates:
+  init: |
+    ingressTimeout: {{ dig "spec" "annotations" "ingress-timeout" "no-value" .resource }}
   outputs: |-
+    ingressTimeout: {{ .init.ingressTimeout }}
     update:
       - op: add
         path: /spec/serviceAccountName

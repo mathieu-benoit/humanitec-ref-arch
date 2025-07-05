@@ -5,6 +5,7 @@ routePaths: ${resources.dns<route.outputs.path}
 routePorts: ${resources.dns<route.outputs.port}
 routeServices: ${resources.dns<route.outputs.service}
 annotations: ${resources['config#ingress'].outputs.annotations}
+ingressTimeout: ${resources['ingress>dns<workload.default'].outputs.ingressTimeout}
 # labels: {}
 templates:
   manifests: |
@@ -20,6 +21,9 @@ templates:
             {{- range $k, $v := .driver.values.annotations }}
             {{ $k }}: {{ $v | toRawJson }}
             {{- end }}
+            {{- if ne (.driver.values.ingressTimeout | first) "no-value" }}
+            ingress-timeout: {{ .driver.values.ingressTimeout | first | toRawJson }}
+            {{- end}}
           {{- end}}
           {{- if hasKey .driver.values "labels" }}
           labels: {{ .driver.values.labels | toRawJson }}
