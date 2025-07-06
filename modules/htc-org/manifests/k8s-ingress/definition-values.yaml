@@ -1,9 +1,9 @@
 class: nginx
 host: ${resources.dns.outputs.host}
 tlsSecretName: ${resources.tls-cert.outputs.tls_secret_name}
-routePaths: ${resources.dns<route.outputs.path}
-routePorts: ${resources.dns<route.outputs.port}
-routeServices: ${resources.dns<route.outputs.service}
+routePaths: ${resources[${org_id}/dns<route].outputs.path}
+routePorts: ${resources[${org_id}/dns<route].outputs.port}
+routeServices: ${resources[${org_id}/dns<route].outputs.service}
 # annotations: {}
 # labels: {}
 templates:

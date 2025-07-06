@@ -29,6 +29,13 @@ resource "humanitec_resource_definition" "dns" {
       }
     })
   }
+  
+  provision = {
+    "ingress" = {
+      is_dependent     = false
+      match_dependents = false
+    }
+  }
 }
 
 resource "humanitec_resource_definition_criteria" "dns" {
