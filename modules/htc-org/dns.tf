@@ -1,8 +1,8 @@
-resource "humanitec_resource_definition" "gcs" {
+resource "humanitec_resource_definition" "dns" {
   driver_type    = "humanitec/opentofu-container-runner"
-  id             = "gcs"
-  name           = "gcs"
-  type           = "gcs"
+  id             = "dns"
+  name           = "dns"
+  type           = "${var.org_id}/dns"
   driver_account = "$${resources['config.default#app'].account}"
   driver_inputs = {
     values_string = jsonencode({
@@ -10,16 +10,16 @@ resource "humanitec_resource_definition" "gcs" {
         "image" = local.opentofu_container_image
       }
       "source" = {
-        "ref"  = "refs/heads/main"
+        "ref"  = "refs/heads/cloud-endpoint"
         "url"  = "https://github.com/mathieu-benoit/terraform-modules-samples.git"
-        "path" = "gcp-gcs"
+        "path" = "gcp-cloud-endpoint"
       }
       "variables" = {
         "app_id"     = "$${context.app.id}"
         "env_id"     = "$${context.env.id}"
         "res_id"     = "$${context.res.id}"
         "project_id" = "$${resources['config.default#app'].outputs.gcp_project_id}"
-        "region"     = "$${resources['config.default#app'].outputs.gcp_region}"
+        "ip_address" = "$${resources['config.default#gke'].outputs.load_balancer}"
       }
       "use_default_backend" = true
       "credentials_config" = {
@@ -29,15 +29,9 @@ resource "humanitec_resource_definition" "gcs" {
       }
     })
   }
-  provision = {
-    "gcp-iam-policy-binding.gcs-default" = {
-      is_dependent     = true
-      match_dependents = false
-    }
-  }
 }
 
-resource "humanitec_resource_definition_criteria" "gcs" {
-  resource_definition_id = resource.humanitec_resource_definition.gcs.id
+resource "humanitec_resource_definition_criteria" "dns" {
+  resource_definition_id = resource.humanitec_resource_definition.dns.id
   force_delete           = true
 }

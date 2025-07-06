@@ -8,6 +8,7 @@ resource "humanitec_resource_definition" "cluster_config" {
       "region"         = var.region
       "project_id"     = var.project_id
       "project_number" = var.project_number
+      "load_balancer"  = var.load_balancer
     })
   }
 }
@@ -17,6 +18,7 @@ resource "humanitec_resource_definition_criteria" "cluster_config" {
 
   resource_definition_id = humanitec_resource_definition.cluster_config.id
   env_type               = each.value.id
+  res_id                 = "gke"
 
   force_delete = true
 }

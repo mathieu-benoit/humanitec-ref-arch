@@ -1,4 +1,12 @@
-/*locals {
+/*
+  humctl get resource-type | grep ${HUMANITEC_ORG}
+
+  humctl get resource-type -o json | jq -r ".[] | select(.metadata.type == \"${HUMANITEC_ORG}/dns\")"
+
+  humctl api delete /orgs/${HUMANITEC_ORG}/resources/types/${HUMANITEC_ORG}%2F$dns
+*/
+
+locals {
   dns_resource_type = "dns"
 }
 
@@ -21,4 +29,4 @@ resource "terracurl_request" "dns_resource_type" {
     "Authorization" = "Bearer ${var.token}"
     "Content-Type"  = "application/json"
   }
-}*/
+}

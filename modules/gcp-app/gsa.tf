@@ -38,3 +38,8 @@ resource "google_project_iam_member" "pubsub_topic" {
   role    = "roles/pubsub.admin"
   member  = "serviceAccount:${google_service_account.terraform_provisioner.email}"
 }
+resource "google_project_iam_member" "cloud_endpoint" {
+  project = var.gcp_project_id
+  role    = "roles/servicemanagement.admin"
+  member  = "serviceAccount:${google_service_account.terraform_provisioner.email}"
+}
