@@ -10,7 +10,7 @@ resource "humanitec_resource_definition" "dns" {
         "image" = local.opentofu_container_image
       }
       "source" = {
-        "ref"  = "refs/heads/cloud-endpoint"
+        "ref"  = "refs/heads/main"
         "url"  = "https://github.com/mathieu-benoit/terraform-modules-samples.git"
         "path" = "gcp-cloud-endpoint"
       }
