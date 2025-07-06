@@ -53,6 +53,16 @@ terraform plan \
 terraform apply out.tfplan
 ```
 
+# Disable not used default resource definitions
+
+Here are the default (Humanitec managed) resource definition not used anymore that we can explicitly disable now:
+```bash
+humctl api PUT /orgs/${HUMANITEC_ORG}/resources/defs/default-humanitec-base-env/criteria --data '[]'
+humctl api PUT /orgs/${HUMANITEC_ORG}/resources/defs/default-humanitec-namespace/criteria --data '[]'
+humctl api PUT /orgs/${HUMANITEC_ORG}/resources/defs/default-humanitec-dns/criteria --data '[]'
+humctl api PUT /orgs/${HUMANITEC_ORG}/resources/defs/default-humanitec-ingress/criteria --data '[]'
+```
+
 # Test connectivity
 
 ```bash
