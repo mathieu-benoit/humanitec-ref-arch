@@ -29,7 +29,7 @@ resource "humanitec_resource_definition" "dns" {
       }
     })
   }
-  
+
   provision = {
     "ingress" = {
       is_dependent     = false
