@@ -7,7 +7,7 @@ resource "humanitec_resource_definition" "ingress" {
   driver_inputs = {
     values_string = jsonencode({
       "class"         = "nginx"
-      "host"          = "$${resources['${var.org_id}/dns'].outputs.host}"
+      "host"          = "$${resources.dns.outputs.host}"
       "tlsSecretName" = "$${resources.tls-cert.outputs.tls_secret_name}"
       "routePaths"    = "$${resources['${var.org_id}/dns<route'].outputs.path}"
       "routePorts"    = "$${resources['${var.org_id}/dns<route'].outputs.port}"
