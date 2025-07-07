@@ -1,65 +1,53 @@
-resource "humanitec_resource_definition" "ingress" {
+resource "humanitec_resource_definition" "httproute" {
   driver_type = "humanitec/template"
-  id          = "custom-ingress"
-  name        = "custom-ingress"
+  id          = "httproute"
+  name        = "httproute"
   type        = "ingress"
 
   driver_inputs = {
     values_string = jsonencode({
-      "class"         = "nginx"
       "host"          = "$${resources.dns.outputs.host}"
-      "tlsSecretName" = "$${resources.tls-cert.outputs.tls_secret_name}"
-      "routePaths"    = "$${resources['${var.org_id}/dns<route'].outputs.path}"
-      "routePorts"    = "$${resources['${var.org_id}/dns<route'].outputs.port}"
-      "routeServices" = "$${resources['${var.org_id}/dns<route'].outputs.service}"
+      "routePaths"    = "$${resources['dns<route'].outputs.path}"
+      "routePorts"    = "$${resources['dns<route'].outputs.port}"
+      "routeServices" = "$${resources['dns<route'].outputs.service}"
       "templates" = {
         "manifests" = <<END_OF_TEXT
 {{- if gt (len .driver.values.routePaths) 0 -}}
-ingress.yaml:
+httproute.yaml:
   location: namespace
   data:
-    apiVersion: networking.k8s.io/v1
-    kind: Ingress
+    apiVersion: gateway.networking.k8s.io/v1
+    kind: HTTPRoute
     metadata:
-      {{- if hasKey .driver.values "annotations" }}
-      annotations: {{ .driver.values.annotations | toRawJson }}
-      {{- end}}
-      {{- if hasKey .driver.values "labels" }}
-      labels: {{ .driver.values.labels | toRawJson }}
-      {{- end}}
-      name: {{ .id }}-ingress
+      name: {{ .id }}-route
     spec:
-      {{- if .driver.values.class }}
-      ingressClassName: {{ .driver.values.class | toRawJson }}
-      {{- end }}
+      parentRefs:
+      - kind: Gateway
+        name: gke-gateway
+        namespace: gke-gateway
+      hostnames:
+      - {{ .driver.values.host | toRawJson }}
       rules:
-      - host: {{ .driver.values.host | toRawJson }}
-        http:
-          paths:
-          {{- range $index, $path := .driver.values.routePaths }}
-          - path: {{ $path | toRawJson }}
-            pathType: {{ $.driver.values.path_type | default "Prefix" | toRawJson }}
-            backend:
-              service:
-                name: {{ index $.driver.values.routeServices $index | toRawJson }}
-                port:
-                  number: {{ index $.driver.values.routePorts $index }}
-          {{- end }}
-      tls:
-      - hosts:
-        - {{ .driver.values.host | toRawJson }}
-        secretName: {{ .driver.values.tlsSecretName | toRawJson }}
+      {{- range $index, $path := .driver.values.routePaths }}
+      - matches:
+        - path:
+            type: PathPrefix
+            value: {{ $path | toRawJson }}
+        backendRefs:
+        - name: {{ index $.driver.values.routeServices $index | toRawJson }}
+          port: {{ index $.driver.values.routePorts $index }}
+      {{- end }}
 {{- end -}}
 END_OF_TEXT
         "outputs"   = <<END_OF_TEXT
-id: {{ .id }}-ingress
+id: {{ .id }}-route
 END_OF_TEXT
       }
     })
   }
 }
 
-resource "humanitec_resource_definition_criteria" "ingress" {
-  resource_definition_id = humanitec_resource_definition.ingress.id
+resource "humanitec_resource_definition_criteria" "httproute" {
+  resource_definition_id = humanitec_resource_definition.httproute.id
   force_delete           = true
 }
