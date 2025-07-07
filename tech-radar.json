@@ -498,6 +498,11 @@
           "moved": 0,
           "ringId": "ga",
           "date": "2025-06-06T00:00:00.000Z"
+        },
+        {
+          "moved": 0,
+          "ringId": "not-supported",
+          "date": "2025-07-06T00:00:00.000Z"
         }
       ],
       "links": [
@@ -510,7 +515,7 @@
       "id": "ingress-controller",
       "title": "Ingress Controller",
       "quadrant": "tools",
-      "description": "Ingress Controller is supported by default if you want to expose your Workloads via a DNS."
+      "description": "Ingress Controller was supported in the past, but now Workloads exposed via a DNS are using the Gateway API."
     },
     {
       "timeline": [
@@ -518,13 +523,18 @@
           "moved": 0,
           "ringId": "coming",
           "date": "2025-06-06T00:00:00.000Z"
+        },
+        {
+          "moved": 0,
+          "ringId": "ga",
+          "date": "2025-07-06T00:00:00.000Z"
         }
       ],
       "key": "gateway-api",
       "id": "gateway-api",
       "title": "Gateway API",
       "quadrant": "tools",
-      "description": "Gateway API will replace our current Ingress Controller implementation when you want to expose your Workloads via a DNS. Coming soon..."
+      "description": "Gateway API will replace our current Ingress Controller implementation when you want to expose your Workloads via a DNS."
     },
     {
       "timeline": [
