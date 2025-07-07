@@ -2,7 +2,7 @@ resource "humanitec_resource_definition" "dns" {
   driver_type    = "humanitec/opentofu-container-runner"
   id             = "dns"
   name           = "dns"
-  type           = "${var.org_id}/dns"
+  type           = "dns"
   driver_account = "$${resources['config.default#app'].account}"
   driver_inputs = {
     values_string = jsonencode({
@@ -18,7 +18,7 @@ resource "humanitec_resource_definition" "dns" {
         "app_id"     = "$${context.app.id}"
         "env_id"     = "$${context.env.id}"
         "res_id"     = "$${context.res.id}"
-        "project_id" = "$${resources['config.default#app'].outputs.gcp_project_id}"
+        "project_id" = "$${resources['config.default#gke'].outputs.project_id}"
         "ip_address" = "$${resources['config.default#gke'].outputs.load_balancer}"
       }
       "use_default_backend" = true
