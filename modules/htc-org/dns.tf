@@ -2,7 +2,7 @@ resource "humanitec_resource_definition" "dns" {
   driver_type    = "humanitec/opentofu-container-runner"
   id             = "dns"
   name           = "dns"
-  type           = "dns"
+  type           = "${var.org_id}/dns"
   driver_account = "$${resources['config.default#app'].account}"
   driver_inputs = {
     values_string = jsonencode({
