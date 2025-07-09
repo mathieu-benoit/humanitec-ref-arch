@@ -35,7 +35,8 @@ This should fail.
 To fix this:
 - `k8s-cluster`: https://github.com/mathieu-benoit/humanitec-ref-arch/blob/main/modules/htc-cluster/k8s-cluster.tf
   - + Agent + Operator
-- (Optional) `k8s-namespace`: https://github.com/mathieu-benoit/humanitec-ref-arch/blob/main/modules/htc-org/k8s-namespace.tf
+- `k8s-namespace`: https://github.com/mathieu-benoit/humanitec-ref-arch/blob/main/modules/htc-org/k8s-namespace.tf
+- Anything else?
 
 Redeploy, that should work.
 
@@ -44,7 +45,27 @@ Then, `dns`:
 - `ingress` -->
 
 ```yaml
-sfsadfsadf
+apiVersion: score.dev/v1b1
+metadata:
+  name: demo
+containers:
+  demo:
+    image: .
+service:
+  ports:
+    tcp:
+      port: 8080
+      targetPort: 8080
+resources:
+  dns:
+    type: dns
+    id: dns
+  route:
+    type: route
+    params:
+      host: ${resources.dns.host}
+      path: /
+      port: 8080
 ```
 
 FIXME
