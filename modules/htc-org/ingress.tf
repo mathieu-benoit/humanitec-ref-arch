@@ -23,8 +23,8 @@ httproute.yaml:
     spec:
       parentRefs:
       - kind: Gateway
-        name: gke-gateway
-        namespace: gke-gateway
+        name: external-gateway
+        namespace: external-gateway
       hostnames:
       - {{ .driver.values.host | toRawJson }}
       rules:

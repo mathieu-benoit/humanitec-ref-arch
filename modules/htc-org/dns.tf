@@ -36,6 +36,8 @@ resource "humanitec_resource_definition" "dns" {
       match_dependents = false
     }
   }
+
+  depends_on = [terracurl_request.dns_resource_type]
 }
 
 resource "humanitec_resource_definition_criteria" "dns" {

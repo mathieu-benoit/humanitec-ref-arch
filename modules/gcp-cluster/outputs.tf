@@ -9,9 +9,7 @@ output "agent_public_key" {
 }
 
 output "load_balancer" {
-  value = google_compute_address.public_ingress.address
-
-  depends_on = [helm_release.ingress_nginx]
+  value = google_compute_global_address.external_gateway.address
 }
 
 output "gcp_wi_pool_provider_name" {

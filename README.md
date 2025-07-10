@@ -59,6 +59,7 @@ Here are the default (Humanitec managed) resource definition not used anymore th
 ```bash
 humctl api PUT /orgs/${HUMANITEC_ORG}/resources/defs/default-humanitec-base-env/criteria --data '[]'
 humctl api PUT /orgs/${HUMANITEC_ORG}/resources/defs/default-humanitec-namespace/criteria --data '[]'
+humctl api PUT /orgs/${HUMANITEC_ORG}/resources/defs/default-humanitec-workload-res/criteria --data '[]'
 humctl api PUT /orgs/${HUMANITEC_ORG}/resources/defs/default-humanitec-dns/criteria --data '[]'
 humctl api PUT /orgs/${HUMANITEC_ORG}/resources/defs/default-humanitec-ingress/criteria --data '[]'
 humctl api PUT /orgs/${HUMANITEC_ORG}/resources/defs/default-humanitec-tls-cert/criteria --data '[]'
