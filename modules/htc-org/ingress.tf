@@ -37,6 +37,22 @@ httproute.yaml:
         - name: {{ index $.driver.values.routeServices $index | toRawJson }}
           port: {{ index $.driver.values.routePorts $index }}
       {{- end }}
+{{- range $index, $service := .driver.values.routeServices | uniq }}
+gcpbackendpolicy-{{ $service }}.yaml:
+  location: namespace
+  data:
+    apiVersion: networking.gke.io/v1
+    kind: GCPBackendPolicy
+    metadata:
+      name: {{ $service }}-backendpolicy
+    spec:
+      default:
+        securityPolicy: gke-gateway-security-policy
+      targetRef:
+        group: ""
+        kind: Service
+        name: {{ $service }}
+{{- end }}
 {{- end -}}
 END_OF_TEXT
         "outputs"   = <<END_OF_TEXT
