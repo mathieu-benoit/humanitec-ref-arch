@@ -13,7 +13,62 @@ locals {
     lfi_rule = {
       priority    = "1200"
       expression  = "evaluatePreconfiguredWaf('lfi-v33-stable', {'sensitivity': 1})"
+      description = "Local file inclusion"
+    }
+    rfi_rule = {
+      priority    = "1300"
+      expression  = "evaluatePreconfiguredWaf('rfi-v33-stable', {'sensitivity': 1})"
       description = "Remote file inclusion"
+    }
+    rce_rule = {
+      priority    = "1400"
+      expression  = "evaluatePreconfiguredWaf('rce-v33-stable', {'sensitivity': 1})"
+      description = "Remote code execution"
+    }
+    methodenforcement_rule = {
+      priority    = "1500"
+      expression  = "evaluatePreconfiguredWaf('methodenforcement-v33-stable', {'sensitivity': 1})"
+      description = "Method enforcement"
+    }
+    scannerdetection_rule = {
+      priority    = "1600"
+      expression  = "evaluatePreconfiguredWaf('scannerdetection-v33-stable', {'sensitivity': 1})"
+      description = "Scanner detection"
+    }
+    protocolattack_rule = {
+      priority    = "1700"
+      expression  = "evaluatePreconfiguredWaf('protocolattack-v33-stable', {'sensitivity': 1})"
+      description = "Protocol attack"
+    }
+    php_rule = {
+      priority    = "1800"
+      expression  = "evaluatePreconfiguredWaf('php-v33-stable', {'sensitivity': 1})"
+      description = "PHP injection attack"
+    }
+    sessionfixation_rule = {
+      priority    = "1900"
+      expression  = "evaluatePreconfiguredWaf('sessionfixation-v33-stable', {'sensitivity': 1})"
+      description = "Session fixation attack"
+    }
+    java_rule = {
+      priority    = "2000"
+      expression  = "evaluatePreconfiguredWaf('java-v33-stable', {'sensitivity': 1})"
+      description = "Java attack"
+    }
+    nodejs_rule = {
+      priority    = "2100"
+      expression  = "evaluatePreconfiguredWaf('nodejs-v33-stable', {'sensitivity': 1})"
+      description = "NodeJS attack"
+    }
+    cve_rule = {
+      priority    = "2200"
+      expression  = "evaluatePreconfiguredExpr('cve-canary')"
+      description = "Log4j vulnerability"
+    }
+    json_sqli_rule = {
+      priority    = "2300"
+      expression  = "evaluatePreconfiguredExpr('json-sqli-canary')"
+      description = "Log4j vulnerability"
     }
   }
 }
