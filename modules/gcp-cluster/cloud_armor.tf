@@ -68,7 +68,7 @@ locals {
     json_sqli_rule = {
       priority    = "2300"
       expression  = "evaluatePreconfiguredExpr('json-sqli-canary')"
-      description = "Log4j vulnerability"
+      description = "JSON-based SQL injection bypass vulnerability"
     }
   }
 }
@@ -106,5 +106,9 @@ resource "google_compute_security_policy" "external_gateway" {
     layer_7_ddos_defense_config {
       enable = true
     }
+  }
+
+  advanced_options_config {
+    log_level = "VERBOSE"
   }
 }
