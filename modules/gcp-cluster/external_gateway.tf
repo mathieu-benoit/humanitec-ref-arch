@@ -58,3 +58,11 @@ resource "kubernetes_manifest" "external_tls_secret" {
       tls_key           = base64encode(tls_self_signed_cert.external_gateway.private_key_pem)
   }))
 }
+
+resource "kubernetes_manifest" "external_gateway_http_to_https_redirect" {
+  manifest = yamldecode(templatefile("${path.module}/manifests/external-gateway-http-to-https-redirect.yaml",
+    {
+      gateway_name      = local.external_gateway_name,
+      gateway_namespace = local.external_gateway_name
+  }))
+}
