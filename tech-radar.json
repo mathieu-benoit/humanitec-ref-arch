@@ -229,6 +229,12 @@
     {
       "timeline": [
         {
+          "moved": 1,
+          "ringId": "ga",
+          "date": "2025-07-11T00:00:00.000Z",
+          "description": "Public DNS is now fully supported, exposing your Workloads via HTTPS."
+        },
+        {
           "moved": 0,
           "ringId": "preview",
           "date": "2025-06-06T00:00:00.000Z"
@@ -244,10 +250,35 @@
       "id": "dns",
       "title": "dns",
       "quadrant": "resources",
-      "description": "Still using the default DNS, need to support both public and private DNS. More to come! Inputs: N/A. Outputs: host."
+      "description": "When exposing your Workloads via a DNS, a publicly available host is generated and managed for you. Inputs: N/A. Outputs: host, url."
     },
     {
       "timeline": [
+        {
+          "moved": 1,
+          "ringId": "coming",
+          "date": "2025-07-11T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://github.com/score-spec/examples/blob/main/resources/dns/score.yaml",
+          "title": "Example"
+        }
+      ],
+      "key": "dns-internal",
+      "id": "dns-internal",
+      "title": "dns.internal",
+      "quadrant": "resources",
+      "description": "Still using the default public DNS, need to support both private DNS too. More to come! Inputs: N/A. Outputs: host, url."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 1,
+          "ringId": "ga",
+          "date": "2025-07-11T00:00:00.000Z"
+        },
         {
           "moved": 0,
           "ringId": "preview",
@@ -649,6 +680,12 @@
     },
     {
       "timeline": [
+        {
+          "moved": 1,
+          "ringId": "ga",
+          "date": "2025-07-11T00:00:00.000Z",
+          "description": "WAF is now facing public DNS endpoints."
+        },
         {
           "moved": 0,
           "ringId": "coming",
