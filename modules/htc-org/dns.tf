@@ -18,7 +18,7 @@ resource "humanitec_resource_definition" "dns" {
         "app_id"     = "$${context.app.id}"
         "env_id"     = "$${context.env.id}"
         "res_id"     = "$${context.res.id}"
-        "project_id" = "$${resources['config.default#app'].outputs.gcp_project_id}"
+        "project_id" = "$${resources['config.default#gke'].outputs.project_id}"
         "ip_address" = "$${resources['config.default#gke'].outputs.load_balancer}"
       }
       "use_default_backend" = true
@@ -36,6 +36,8 @@ resource "humanitec_resource_definition" "dns" {
       match_dependents = false
     }
   }
+
+  depends_on = [terracurl_request.dns_resource_type]
 }
 
 resource "humanitec_resource_definition_criteria" "dns" {

@@ -19,18 +19,20 @@ module "gcp_cluster" {
 module "htc_cluster" {
   source = "./modules/htc-cluster"
 
-  org_id                    = var.org_id
-  id                        = module.gcp_cluster.cloud_account_id
-  env_types                 = var.env_types
-  region                    = var.clusters[0].region
-  project_id                = var.clusters[0].project_id
-  project_number            = module.gcp_cluster.project_number
-  name                      = var.clusters[0].name
-  load_balancer             = module.gcp_cluster.load_balancer
-  operator_public_key       = module.gcp_cluster.operator_public_key
-  agent_public_key          = module.gcp_cluster.agent_public_key
-  cluster_access_gsa_email  = module.gcp_cluster.cluster_access_gsa_email
-  gcp_wi_pool_provider_name = module.gcp_cluster.gcp_wi_pool_provider_name
+  org_id                        = var.org_id
+  id                            = module.gcp_cluster.cloud_account_id
+  env_types                     = var.env_types
+  region                        = var.clusters[0].region
+  project_id                    = var.clusters[0].project_id
+  project_number                = module.gcp_cluster.project_number
+  name                          = var.clusters[0].name
+  load_balancer                 = module.gcp_cluster.load_balancer
+  operator_public_key           = module.gcp_cluster.operator_public_key
+  agent_public_key              = module.gcp_cluster.agent_public_key
+  cluster_access_gsa_email      = module.gcp_cluster.cluster_access_gsa_email
+  gcp_wi_pool_provider_name     = module.gcp_cluster.gcp_wi_pool_provider_name
+  external_gateway_name         = module.gcp_cluster.external_gateway_name
+  external_security_policy_name = module.gcp_cluster.external_security_policy_name
 }
 
 module "gcp_app" {

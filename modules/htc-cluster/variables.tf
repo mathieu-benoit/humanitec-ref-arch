@@ -62,3 +62,13 @@ variable "gcp_wi_pool_provider_name" {
   description = "The Workload Identity Pool Provider name to access the GKE cluster from Humanitec."
   type        = string
 }
+
+variable "external_gateway_name" {
+  description = "The Gateway API name assigned to this GKE cluster for external traffic."
+  type        = string
+}
+
+variable "external_security_policy_name" {
+  description = "The Cloud Armor Security Policy name assigned to this GKE cluster for external traffic."
+  type        = string
+}

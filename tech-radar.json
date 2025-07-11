@@ -156,26 +156,6 @@
       ],
       "links": [
         {
-          "url": "https://github.com/mathieu-benoit/sail-sharp/blob/main/app/Dockerfile",
-          "title": "Example"
-        }
-      ],
-      "key": "nodejs",
-      "id": "nodejs",
-      "title": "NodeJS",
-      "quadrant": "containers",
-      "description": "NodeJS 20 and 22"
-    },
-    {
-      "timeline": [
-        {
-          "moved": 0,
-          "ringId": "ga",
-          "date": "2025-06-06T00:00:00.000Z"
-        }
-      ],
-      "links": [
-        {
           "url": "https://developer.humanitec.com/platform-orchestrator/examples/score/environment-variables/",
           "title": "Example"
         }
@@ -249,6 +229,12 @@
     {
       "timeline": [
         {
+          "moved": 1,
+          "ringId": "ga",
+          "date": "2025-07-11T00:00:00.000Z",
+          "description": "Public DNS is now fully supported, exposing your Workloads via HTTPS."
+        },
+        {
           "moved": 0,
           "ringId": "preview",
           "date": "2025-06-06T00:00:00.000Z"
@@ -264,10 +250,35 @@
       "id": "dns",
       "title": "dns",
       "quadrant": "resources",
-      "description": "Still using the default DNS, need to support both public and private DNS. More to come! Inputs: N/A. Outputs: host."
+      "description": "When exposing your Workloads via a DNS, a publicly available host is generated and managed for you. Inputs: N/A. Outputs: host, url."
     },
     {
       "timeline": [
+        {
+          "moved": 1,
+          "ringId": "coming",
+          "date": "2025-07-11T00:00:00.000Z"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://github.com/score-spec/examples/blob/main/resources/dns/score.yaml",
+          "title": "Example"
+        }
+      ],
+      "key": "dns-internal",
+      "id": "dns-internal",
+      "title": "dns.internal",
+      "quadrant": "resources",
+      "description": "Still using the default public DNS, need to support both private DNS too. More to come! Inputs: N/A. Outputs: host, url."
+    },
+    {
+      "timeline": [
+        {
+          "moved": 1,
+          "ringId": "ga",
+          "date": "2025-07-11T00:00:00.000Z"
+        },
         {
           "moved": 0,
           "ringId": "preview",
@@ -495,6 +506,11 @@
     {
       "timeline": [
         {
+          "moved": -1,
+          "ringId": "not-supported",
+          "date": "2025-07-11T00:00:00.000Z"
+        },
+        {
           "moved": 0,
           "ringId": "ga",
           "date": "2025-06-06T00:00:00.000Z"
@@ -510,10 +526,16 @@
       "id": "ingress-controller",
       "title": "Ingress Controller",
       "quadrant": "tools",
-      "description": "Ingress Controller is supported by default if you want to expose your Workloads via a DNS."
+      "description": "Ingress Controller was supported in the past, but now Workloads exposed via a DNS are using the Gateway API."
     },
     {
       "timeline": [
+        {
+          "moved": 1,
+          "ringId": "ga",
+          "date": "2025-07-11T00:00:00.000Z",
+          "description": "Gateway API is now used instead of the Nginx Ingress controller used previously."
+        },
         {
           "moved": 0,
           "ringId": "coming",
@@ -524,7 +546,7 @@
       "id": "gateway-api",
       "title": "Gateway API",
       "quadrant": "tools",
-      "description": "Gateway API will replace our current Ingress Controller implementation when you want to expose your Workloads via a DNS. Coming soon..."
+      "description": "Gateway API will replace our current Ingress Controller implementation when you want to expose your Workloads via a DNS."
     },
     {
       "timeline": [
@@ -646,7 +668,7 @@
       "timeline": [
         {
           "moved": 0,
-          "ringId": "preview",
+          "ringId": "coming",
           "date": "2025-06-06T00:00:00.000Z"
         }
       ],
@@ -654,10 +676,16 @@
       "id": "network-policies",
       "title": "Network Policies",
       "quadrant": "security",
-      "description": "Kubernetes Network Policies are automatically injected in each Namespace when you Deploy your Workloads. This guarantee a segmentation between the different projects and environments. Soon, we will also enforce more granular communication between Workloads too. More update on this soon..."
+      "description": "Kubernetes Network Policies will be automatically injected in each Namespace when you Deploy your Workloads. This guarantee a segmentation between the different projects and environments. Soon, we will also enforce more granular communication between Workloads too. More update on this soon..."
     },
     {
       "timeline": [
+        {
+          "moved": 1,
+          "ringId": "ga",
+          "date": "2025-07-11T00:00:00.000Z",
+          "description": "WAF is now facing public DNS endpoints."
+        },
         {
           "moved": 0,
           "ringId": "coming",

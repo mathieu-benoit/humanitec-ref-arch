@@ -8,7 +8,11 @@ locals {
   url            = "https://api.humanitec.io/orgs/${var.org_id}/resources/types"
   method         = "POST"
   response_codes = ["200", "409"]
-  request_body   = jsonencode(yamldecode(templatefile("${path.module}/resource-types/apphub-app.yaml", { org_id = var.org_id, resource_type = local.apphub_app_resource_type })))
+  request_body   = jsonencode(yamldecode(templatefile("${path.module}/resource-types/apphub-app.yaml", 
+  { 
+    org_id = var.org_id,
+    resource_type = local.apphub_app_resource_type 
+  })))
   headers = {
     "Authorization" = "Bearer ${var.token}"
     "Content-Type"  = "application/json"

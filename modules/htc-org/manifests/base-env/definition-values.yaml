@@ -22,26 +22,3 @@ templates:
           hard:
             limits.cpu: ${resources['config#quota'].outputs.limits-cpu}
             limits.memory: ${resources['config#quota'].outputs.limits-memory}
-    allow-nginx-ingress.yaml:
-      location: namespace
-      data:
-        apiVersion: networking.k8s.io/v1
-        kind: NetworkPolicy
-        metadata:
-          name: allow-nginx-ingress
-        spec:
-          podSelector: {}
-          policyTypes:
-          - Ingress
-          ingress:
-          - from:
-            - namespaceSelector:
-                matchLabels:
-                  kubernetes.io/metadata.name: ingress-nginx
-              podSelector:
-                matchLabels:
-                  app.kubernetes.io/name: ingress-nginx
-          - from:
-            - namespaceSelector:
-                matchLabels:
-                  kubernetes.io/metadata.name: ${resources.k8s-namespace#k8s-namespace.outputs.namespace}
