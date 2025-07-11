@@ -156,26 +156,6 @@
       ],
       "links": [
         {
-          "url": "https://github.com/mathieu-benoit/sail-sharp/blob/main/app/Dockerfile",
-          "title": "Example"
-        }
-      ],
-      "key": "nodejs",
-      "id": "nodejs",
-      "title": "NodeJS",
-      "quadrant": "containers",
-      "description": "NodeJS 20 and 22"
-    },
-    {
-      "timeline": [
-        {
-          "moved": 0,
-          "ringId": "ga",
-          "date": "2025-06-06T00:00:00.000Z"
-        }
-      ],
-      "links": [
-        {
           "url": "https://developer.humanitec.com/platform-orchestrator/examples/score/environment-variables/",
           "title": "Example"
         }
@@ -520,14 +500,14 @@
     {
       "timeline": [
         {
-          "moved": 0,
-          "ringId": "coming",
-          "date": "2025-06-06T00:00:00.000Z"
+          "moved": 1,
+          "ringId": "ga",
+          "date": "2025-07-06T00:00:00.000Z"
         },
         {
           "moved": 0,
-          "ringId": "ga",
-          "date": "2025-07-06T00:00:00.000Z"
+          "ringId": "coming",
+          "date": "2025-06-06T00:00:00.000Z"
         }
       ],
       "key": "gateway-api",
@@ -656,7 +636,7 @@
       "timeline": [
         {
           "moved": 0,
-          "ringId": "preview",
+          "ringId": "coming",
           "date": "2025-06-06T00:00:00.000Z"
         }
       ],
@@ -664,7 +644,7 @@
       "id": "network-policies",
       "title": "Network Policies",
       "quadrant": "security",
-      "description": "Kubernetes Network Policies are automatically injected in each Namespace when you Deploy your Workloads. This guarantee a segmentation between the different projects and environments. Soon, we will also enforce more granular communication between Workloads too. More update on this soon..."
+      "description": "Kubernetes Network Policies will be automatically injected in each Namespace when you Deploy your Workloads. This guarantee a segmentation between the different projects and environments. Soon, we will also enforce more granular communication between Workloads too. More update on this soon..."
     },
     {
       "timeline": [
