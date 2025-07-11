@@ -476,13 +476,13 @@
       "timeline": [
         {
           "moved": 0,
-          "ringId": "ga",
-          "date": "2025-06-06T00:00:00.000Z"
-        },
+          "ringId": "not-supported",
+          "date": "2025-07-11T00:00:00.000Z"
+        }
         {
           "moved": 0,
-          "ringId": "not-supported",
-          "date": "2025-07-06T00:00:00.000Z"
+          "ringId": "ga",
+          "date": "2025-06-06T00:00:00.000Z"
         }
       ],
       "links": [
@@ -502,7 +502,8 @@
         {
           "moved": 1,
           "ringId": "ga",
-          "date": "2025-07-06T00:00:00.000Z"
+          "date": "2025-07-11T00:00:00.000Z",
+          "description": "Gateway API is now used instead of the Nginx Ingress controller used previously."
         },
         {
           "moved": 0,
