@@ -6,10 +6,11 @@ resource "humanitec_resource_definition" "httproute" {
 
   driver_inputs = {
     values_string = jsonencode({
-      "host"          = "$${resources['${var.org_id}/dns'].outputs.host}"
-      "routePaths"    = "$${resources['${var.org_id}/dns<route'].outputs.path}"
-      "routePorts"    = "$${resources['${var.org_id}/dns<route'].outputs.port}"
-      "routeServices" = "$${resources['${var.org_id}/dns<route'].outputs.service}"
+      "securityPolicy" = "$${resources['config#gke'].outputs.external_security_policy}"
+      "host"           = "$${resources['${var.org_id}/dns'].outputs.host}"
+      "routePaths"     = "$${resources['${var.org_id}/dns<route'].outputs.path}"
+      "routePorts"     = "$${resources['${var.org_id}/dns<route'].outputs.port}"
+      "routeServices"  = "$${resources['${var.org_id}/dns<route'].outputs.service}"
       "templates" = {
         "manifests" = <<END_OF_TEXT
 {{- if gt (len .driver.values.routePaths) 0 -}}
@@ -47,7 +48,7 @@ gcpbackendpolicy-{{ $service }}.yaml:
       name: {{ $service }}-backendpolicy
     spec:
       default:
-        securityPolicy: gke-gateway-security-policy
+        securityPolicy: {{ $.driver.values.securityPolicy | toRawJson }}
       targetRef:
         group: ""
         kind: Service

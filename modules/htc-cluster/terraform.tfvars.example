@@ -7,6 +7,9 @@ cluster_access_gsa_email = ""
 
 env_types = ""
 
+# The Cloud Armor Security Policy name assigned to this GKE cluster for external traffic.
+external_security_policy = ""
+
 # The Workload Identity Pool Provider name to access the GKE cluster from Humanitec.
 gcp_wi_pool_provider_name = ""
 

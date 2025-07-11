@@ -5,10 +5,11 @@ resource "humanitec_resource_definition" "cluster_config" {
   type        = "config"
   driver_inputs = {
     values_string = jsonencode({
-      "region"         = var.region
-      "project_id"     = var.project_id
-      "project_number" = var.project_number
-      "load_balancer"  = var.load_balancer
+      "region"                   = var.region
+      "project_id"               = var.project_id
+      "project_number"           = var.project_number
+      "load_balancer"            = var.load_balancer
+      "external_security_policy" = var.external_security_policy
     })
   }
 }

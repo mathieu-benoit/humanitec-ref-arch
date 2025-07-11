@@ -31,6 +31,7 @@ module "htc_cluster" {
   agent_public_key          = module.gcp_cluster.agent_public_key
   cluster_access_gsa_email  = module.gcp_cluster.cluster_access_gsa_email
   gcp_wi_pool_provider_name = module.gcp_cluster.gcp_wi_pool_provider_name
+  external_security_policy  = module.gcp_cluster.external_security_policy
 }
 
 module "gcp_app" {

@@ -17,6 +17,7 @@
 | Name | Type |
 |------|------|
 | [google_compute_global_address.external_gateway](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_global_address) | resource |
+| [google_compute_security_policy.external_gateway](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_security_policy) | resource |
 | [google_iam_workload_identity_pool.gke_cluster_access](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool) | resource |
 | [google_iam_workload_identity_pool_provider.gke_cluster_access](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool_provider) | resource |
 | [google_project_iam_custom_role.default_secretstore](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_custom_role) | resource |
@@ -67,6 +68,7 @@
 | agent\_public\_key | n/a |
 | cloud\_account\_id | n/a |
 | cluster\_access\_gsa\_email | n/a |
+| external\_security\_policy | n/a |
 | gcp\_wi\_pool\_name | n/a |
 | gcp\_wi\_pool\_provider\_name | n/a |
 | load\_balancer | n/a |
