@@ -70,7 +70,8 @@
 | agent\_public\_key | n/a |
 | cloud\_account\_id | n/a |
 | cluster\_access\_gsa\_email | n/a |
-| external\_security\_policy | n/a |
+| external\_gateway\_name | n/a |
+| external\_security\_policy\_name | n/a |
 | gcp\_wi\_pool\_name | n/a |
 | gcp\_wi\_pool\_provider\_name | n/a |
 | load\_balancer | n/a |

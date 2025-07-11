@@ -32,7 +32,8 @@
 | agent\_public\_key | The public key of the Agent. | `string` | n/a | yes |
 | cluster\_access\_gsa\_email | The email of the GSA to access the GKE cluster from Humanitec. | `string` | n/a | yes |
 | env\_types | n/a | <pre>list(object({<br/>    id          = string<br/>    description = string<br/>  }))</pre> | n/a | yes |
-| external\_security\_policy | The Cloud Armor Security Policy name assigned to this GKE cluster for external traffic. | `string` | n/a | yes |
+| external\_gateway\_name | The Gateway API name assigned to this GKE cluster for external traffic. | `string` | n/a | yes |
+| external\_security\_policy\_name | The Cloud Armor Security Policy name assigned to this GKE cluster for external traffic. | `string` | n/a | yes |
 | gcp\_wi\_pool\_provider\_name | The Workload Identity Pool Provider name to access the GKE cluster from Humanitec. | `string` | n/a | yes |
 | id | ID of the GKE cluster resource | `string` | n/a | yes |
 | load\_balancer | The Load Balancer of the EKS cluster | `string` | n/a | yes |

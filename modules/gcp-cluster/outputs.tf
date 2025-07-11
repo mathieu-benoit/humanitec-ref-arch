@@ -33,6 +33,10 @@ output "project_number" {
   value = data.google_project.project.number
 }
 
-output "external_security_policy" {
+output "external_gateway_name" {
+  value = local.external_gateway_name
+}
+
+output "external_security_policy_name" {
   value = google_compute_security_policy.external_gateway.name
 }

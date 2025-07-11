@@ -6,7 +6,8 @@ resource "humanitec_resource_definition" "httproute" {
 
   driver_inputs = {
     values_string = jsonencode({
-      "securityPolicy" = "$${resources['config#gke'].outputs.external_security_policy}"
+      "gateway"        = "$${resources['config#gke'].outputs.external_gateway_name}"
+      "securityPolicy" = "$${resources['config#gke'].outputs.external_security_policy_name}"
       "host"           = "$${resources['${var.org_id}/dns'].outputs.host}"
       "routePaths"     = "$${resources['${var.org_id}/dns<route'].outputs.path}"
       "routePorts"     = "$${resources['${var.org_id}/dns<route'].outputs.port}"
@@ -24,8 +25,8 @@ httproute.yaml:
     spec:
       parentRefs:
       - kind: Gateway
-        name: external-gateway
-        namespace: external-gateway
+        name: {{ .driver.values.gateway | toRawJson }}
+        namespace: {{ .driver.values.gateway | toRawJson }}
       hostnames:
       - {{ .driver.values.host | toRawJson }}
       rules:
