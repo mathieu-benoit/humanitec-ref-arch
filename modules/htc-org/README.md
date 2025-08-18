@@ -56,6 +56,7 @@
 | [humanitec_resource_definition_criteria.vertex_ai_member](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.workload](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_secretstore.enable_operator_mode](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/secretstore) | resource |
+| [terracurl_request.apphub_app_resource_type](https://registry.terraform.io/providers/devops-rob/terracurl/latest/docs/resources/request) | resource |
 | [terracurl_request.dns_resource_type](https://registry.terraform.io/providers/devops-rob/terracurl/latest/docs/resources/request) | resource |
 
 ## Inputs

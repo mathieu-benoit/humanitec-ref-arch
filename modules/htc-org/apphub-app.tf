@@ -31,9 +31,9 @@ resource "humanitec_resource_definition" "apphub_app" {
     })
   }
 
-  /*depends_on = [
+  depends_on = [
     terracurl_request.apphub_app_resource_type
-  ]*/
+  ]
 }
 
 resource "humanitec_resource_definition_criteria" "apphub_app" {
