@@ -46,7 +46,7 @@ templates:
               automountServiceAccountToken: false
               containers:
                 - name: {{ .init.name }}
-                  image: postgres:17.5-alpine
+                  image: postgres:17.6-alpine
                   env:
                     - name: POSTGRES_USER
                       value: {{ .init.user | quote }}
