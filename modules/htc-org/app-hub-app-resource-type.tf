@@ -1,6 +1,8 @@
 /*
   humctl get resource-type | grep ${HUMANITEC_ORG}
 
+  humctl delete res-def apphub-app
+  
   humctl get resource-type -o json | jq -r ".[] | select(.metadata.type == \"${HUMANITEC_ORG}/gcp-apphub-app\")"
 
   humctl api delete /orgs/${HUMANITEC_ORG}/resources/types/${HUMANITEC_ORG}%2Fgcp-apphub-app

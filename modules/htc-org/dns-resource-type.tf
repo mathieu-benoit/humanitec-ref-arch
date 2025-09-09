@@ -3,6 +3,8 @@
 
   humctl get resource-type -o json | jq -r ".[] | select(.metadata.type == \"${HUMANITEC_ORG}/dns\")"
 
+  humctl delete res-def dns
+  
   humctl api delete /orgs/${HUMANITEC_ORG}/resources/types/${HUMANITEC_ORG}%2Fdns
 
   terraform state rm module.org.terracurl_request.dns_resource_type
