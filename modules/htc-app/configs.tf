@@ -1,5 +1,5 @@
 locals {
-  app_res_id   = "app"
+  app_res_id = "app"
 }
 
 resource "humanitec_resource_definition" "app_config" {
