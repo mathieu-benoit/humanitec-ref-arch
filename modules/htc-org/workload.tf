@@ -8,11 +8,11 @@ resource "humanitec_resource_definition" "workload" {
     values_string = jsonencode(yamldecode(file("${path.module}/manifests/workload/definition-values.yaml")))
   }
 
-  #provision = {
-  #  "${var.org_id}/gcp-apphub-workload" = {
-  #    is_dependent = true
-  #  }
-  #}
+  provision = {
+    "${var.org_id}/gcp-apphub-workload" = {
+      is_dependent = false
+    }
+  }
 }
 
 resource "humanitec_resource_definition_criteria" "workload" {
