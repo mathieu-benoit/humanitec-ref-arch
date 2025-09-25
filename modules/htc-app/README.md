@@ -22,9 +22,7 @@
 | [humanitec_pipeline_criteria.wait_for_readiness](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/pipeline_criteria) | resource |
 | [humanitec_resource_account.cloud_account](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_account) | resource |
 | [humanitec_resource_definition.app_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition) | resource |
-| [humanitec_resource_definition.quota_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition) | resource |
 | [humanitec_resource_definition_criteria.app_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
-| [humanitec_resource_definition_criteria.quota_config](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_service_user_token.service_user](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/service_user_token) | resource |
 | [humanitec_user.service_user](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/user) | resource |
 | [humanitec_users.member](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/data-sources/users) | data source |

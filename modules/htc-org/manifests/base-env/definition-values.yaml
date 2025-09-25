@@ -11,14 +11,3 @@ templates:
           gcpsm:
             auth: {}
             projectID: ${resources['config#app'].outputs.gcp_project_id}
-    quota.yaml:
-      location: namespace
-      data:
-        apiVersion: v1
-        kind: ResourceQuota
-        metadata:
-          name: compute-resources
-        spec:
-          hard:
-            limits.cpu: ${resources['config#quota'].outputs.limits-cpu}
-            limits.memory: ${resources['config#quota'].outputs.limits-memory}
