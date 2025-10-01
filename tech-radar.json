@@ -633,6 +633,20 @@
     {
       "timeline": [
         {
+          "moved": 1,
+          "ringId": "ga",
+          "date": "2025-10-01T00:00:00.000Z"
+        }
+      ],
+      "key": "apphub",
+      "id": "apphub",
+      "title": "AppHub",
+      "quadrant": "tools",
+      "description": "Namespaces and Workloads/Services are by default registered in Google Cloud AppHub."
+    },
+    {
+      "timeline": [
+        {
           "moved": 0,
           "ringId": "ga",
           "date": "2025-06-06T00:00:00.000Z"
