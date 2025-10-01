@@ -10,7 +10,7 @@ resource "humanitec_resource_definition" "workload" {
 
   provision = {
     "${var.org_id}/gcp-apphub-workload" = {
-      is_dependent = false
+      is_dependent = true
     }
   }
 }
