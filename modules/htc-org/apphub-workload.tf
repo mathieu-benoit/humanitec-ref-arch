@@ -2,7 +2,7 @@ resource "humanitec_resource_definition" "apphub_workload" {
   driver_type    = "humanitec/opentofu-container-runner"
   id             = "apphub-workload"
   name           = "apphub-workload"
-  type           = "${var.org_id}/${local.apphub_workload_resource_type}"
+  type           = humanitec_resource_type.apphub_workload.id
   driver_account = "$${resources['config.default#app'].account}"
   driver_inputs = {
     values_string = jsonencode({
@@ -33,10 +33,6 @@ resource "humanitec_resource_definition" "apphub_workload" {
       }
     })
   }
-
-  depends_on = [
-    terracurl_request.apphub_workload_resource_type
-  ]
 }
 
 resource "humanitec_resource_definition_criteria" "apphub_workload" {

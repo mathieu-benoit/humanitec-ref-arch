@@ -9,7 +9,7 @@ resource "humanitec_resource_definition" "base-env" {
   }
 
   provision = {
-    "${var.org_id}/${local.apphub_app_resource_type}" = {
+    "${humanitec_resource_type.apphub_app.id}" = {
       is_dependent     = true
       match_dependents = false
     }

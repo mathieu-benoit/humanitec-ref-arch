@@ -2,7 +2,7 @@ resource "humanitec_resource_definition" "dns" {
   driver_type    = "humanitec/opentofu-container-runner"
   id             = "dns"
   name           = "dns"
-  type           = "${var.org_id}/dns"
+  type           = humanitec_resource_type.dns.id
   driver_account = "$${resources['config.default#app'].account}"
   driver_inputs = {
     values_string = jsonencode({
@@ -36,8 +36,6 @@ resource "humanitec_resource_definition" "dns" {
       match_dependents = false
     }
   }
-
-  depends_on = [terracurl_request.dns_resource_type]
 }
 
 resource "humanitec_resource_definition_criteria" "dns" {
