@@ -54,6 +54,23 @@ gcpbackendpolicy-{{ $service }}.yaml:
         group: ""
         kind: Service
         name: {{ $service }}
+networkpolicy-{{ $service }}.yaml:
+  location: namespace
+  data:
+    apiVersion: networking.k8s.io/v1
+    kind: NetworkPolicy
+    metadata:
+      name: ingress-to-{{ $service }}
+    spec:
+      podSelector:
+        matchLabels:
+          app.kubernetes.io/name: {{ $service }}
+      ingress:
+        - from:
+            - ipBlock:
+                cidr: 0.0.0.0/0
+          ports:
+            - port: {{ index $.driver.values.routePorts $index }}
 {{- end }}
 {{- end -}}
 END_OF_TEXT
