@@ -32,6 +32,7 @@ templates:
             metadata:
               labels:
                 app.kubernetes.io/name: {{ .init.name }}
+                humanitec.io/trusted-workload: "true"
             spec:
               automountServiceAccountToken: false
               securityContext:
@@ -93,6 +94,7 @@ templates:
           podSelector:
             matchLabels:
               app.kubernetes.io/name: {{ .init.name }}
+              humanitec.io/trusted-workload: "true"
           policyTypes:
             - Ingress
           ingress:
@@ -101,9 +103,8 @@ templates:
                   matchLabels:
                     {{- if regexMatch "modules\\.[a-z0-9-]+\\.externals" .driver.values.resId }}
                     app.kubernetes.io/name: {{ index (splitList "." .driver.values.resId) 1 }}
-                    {{- else }}
-                    humanitec.io/trusted-workload: "true"
                     {{- end }}
+                    humanitec.io/trusted-workload: "true"
               ports:
                 - port: {{ .init.port }}
   outputs: |-
