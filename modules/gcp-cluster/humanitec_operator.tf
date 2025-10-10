@@ -74,7 +74,8 @@ resource "google_project_iam_custom_role" "default_secretstore" {
     "secretmanager.secrets.update",
     "secretmanager.versions.list",
     "secretmanager.versions.add",
-    "secretmanager.versions.access"
+    "secretmanager.versions.access",
+    "secretmanager.versions.destroy",
   ]
 }
 resource "google_project_iam_member" "default_secretstore" {
