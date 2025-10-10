@@ -60,7 +60,7 @@ templates:
                     memory: 64Mi
                 ports:
                 - name: tcp-redis
-                  containerPort: 6379
+                  containerPort: {{ .init.port }}
                 volumeMounts:
                 - mountPath: /data
                   name: redis-data
@@ -88,7 +88,7 @@ templates:
         apiVersion: networking.k8s.io/v1
         kind: NetworkPolicy
         metadata:
-          name: redis-ingress
+          name: ingress-to-{{ .init.name }}
         spec:
           podSelector:
             matchLabels:
@@ -104,10 +104,11 @@ templates:
                     {{- else }}
                     humanitec.io/trusted-workload: "true"
                     {{- end }}
+              ports:
+                - port: {{ .init.port }}
   outputs: |-
     host: {{ .init.name }}
     port: {{ .init.port }}
-    test: {{ regexMatch "modules\\.[a-z0-9-]+\\.externals" .driver.values.resId }}
   secrets: |-
     username: ""
     password: ""
