@@ -39,10 +39,14 @@ templates:
             - Egress
           ingress:
             - from:
-              - podSelector: {}
+              - podSelector:
+                  matchLabels:
+                    humanitec.io/trusted-workload: "true"
           egress:
             - to:
-              - podSelector: {}
+              - podSelector:
+                  matchLabels:
+                    humanitec.io/trusted-workload: "true"
             - to:
               - ipBlock:
                   cidr: 0.0.0.0/0
