@@ -681,14 +681,14 @@
     {
       "timeline": [
         {
-          "moved": 0,
-          "ringId": "coming",
-          "date": "2025-06-06T00:00:00.000Z"
-        },
-        {
           "moved": 1,
           "ringId": "ga",
           "date": "2025-10-11T00:00:00.000Z"
+        },
+        {
+          "moved": 0,
+          "ringId": "coming",
+          "date": "2025-06-06T00:00:00.000Z"
         }
       ],
       "key": "network-policies",
