@@ -143,7 +143,7 @@ resource "kubernetes_network_policy" "humanitec_runner_egress" {
     egress {
       to {
         ip_block {
-          cidr = "169.254.20.10/32"
+          cidr = "169.254.20.10/32" /* NodeLocal DNSCache with Cloud DNS */
         }
       }
       ports {
