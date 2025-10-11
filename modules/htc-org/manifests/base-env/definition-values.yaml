@@ -11,7 +11,19 @@ templates:
           gcpsm:
             auth: {}
             projectID: ${resources['config#app'].outputs.gcp_project_id}
-    network-policy.yaml:
+    network-policy-denyall.yaml:
+      location: namespace
+      data:
+        apiVersion: networking.k8s.io/v1
+        kind: NetworkPolicy
+        metadata:
+          name: deny-all
+        spec:
+          podSelector: {}
+          policyTypes:
+            - Ingress
+            - Egress
+    network-policy-default.yaml:
       location: namespace
       data:
         apiVersion: networking.k8s.io/v1
@@ -19,16 +31,22 @@ templates:
         metadata:
           name: default
         spec:
-          podSelector: {}
+          podSelector:
+            matchLabels:
+              humanitec.io/trusted-workload: "true"
           policyTypes:
             - Ingress
             - Egress
           ingress:
             - from:
-              - podSelector: {}
+              - podSelector:
+                  matchLabels:
+                    humanitec.io/trusted-workload: "true"
           egress:
             - to:
-              - podSelector: {}
+              - podSelector:
+                  matchLabels:
+                    humanitec.io/trusted-workload: "true"
             - to:
               - ipBlock:
                   cidr: 0.0.0.0/0

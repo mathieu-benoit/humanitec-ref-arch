@@ -105,3 +105,86 @@ resource "kubernetes_manifest" "default_secretstore" {
   }
   depends_on = [helm_release.humanitec_operator]
 }
+
+resource "kubernetes_network_policy" "humanitec_operator_deny_all" {
+  metadata {
+    name      = "deny-all"
+    namespace = kubernetes_namespace.humanitec_operator.metadata[0].name
+  }
+
+  spec {
+    pod_selector {}
+
+    policy_types = ["Ingress", "Egress"]
+  }
+}
+
+resource "kubernetes_network_policy" "humanitec_operator_egress" {
+  metadata {
+    name      = "egress-from-humanitec-operator"
+    namespace = kubernetes_namespace.humanitec_operator.metadata[0].name
+  }
+
+  spec {
+    pod_selector {
+      match_labels = {
+        "app.kubernetes.io/name" = "humanitec-operator"
+      }
+    }
+
+    egress {
+      to {
+        ip_block {
+          cidr = "0.0.0.0/0"
+        }
+      }
+      ports {
+        port     = "443"
+        protocol = "TCP"
+      }
+    }
+
+    egress {
+      to {
+        ip_block {
+          cidr = "169.254.20.10/32" /* NodeLocal DNSCache with Cloud DNS */
+        }
+      }
+      ports {
+        port     = "53"
+        protocol = "TCP"
+      }
+      ports {
+        port     = "53"
+        protocol = "UDP"
+      }
+    }
+
+    egress {
+      to {
+        ip_block {
+          cidr = "169.254.169.254/32" /* GKE Workload Identity */
+        }
+      }
+      ports {
+        port     = "80"
+        protocol = "TCP"
+      }
+    }
+
+    egress {
+      to {
+        ip_block {
+          cidr = "169.254.169.252/32" /* GKE Workload Identity */
+        }
+      }
+      ports {
+        port     = "988"
+        protocol = "TCP"
+      }
+    }
+
+
+    policy_types = ["Egress"]
+  }
+}

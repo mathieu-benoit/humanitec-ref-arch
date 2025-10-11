@@ -52,3 +52,61 @@ resource "helm_release" "humanitec_agent" {
     }
   ]
 }
+
+resource "kubernetes_network_policy" "humanitec_agent_deny_all" {
+  metadata {
+    name      = "deny-all"
+    namespace = kubernetes_namespace.humanitec_agent.metadata[0].name
+  }
+
+  spec {
+    pod_selector {}
+
+    policy_types = ["Ingress", "Egress"]
+  }
+}
+
+resource "kubernetes_network_policy" "humanitec_agent_egress" {
+  metadata {
+    name      = "egress-from-humanitec-agent"
+    namespace = kubernetes_namespace.humanitec_agent.metadata[0].name
+  }
+
+  spec {
+    pod_selector {
+      match_labels = {
+        "app.kubernetes.io/name" = "humanitec-agent"
+      }
+    }
+
+    egress {
+      to {
+        ip_block {
+          cidr = "0.0.0.0/0"
+        }
+      }
+      ports {
+        port     = "443"
+        protocol = "TCP"
+      }
+    }
+
+    egress {
+      to {
+        ip_block {
+          cidr = "169.254.20.10/32" /* NodeLocal DNSCache with Cloud DNS */
+        }
+      }
+      ports {
+        port     = "53"
+        protocol = "TCP"
+      }
+      ports {
+        port     = "53"
+        protocol = "UDP"
+      }
+    }
+
+    policy_types = ["Egress"]
+  }
+}

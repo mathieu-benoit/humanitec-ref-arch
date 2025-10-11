@@ -10,7 +10,7 @@ templates:
     {{- else }}
     port: 6379
     # Deployment names shouldn't be > 47 https://pauldally.medium.com/why-you-try-to-keep-your-deployment-names-to-47-characters-or-less-1f93a848d34c
-    {{ if regexMatch "modules\\.[a-z0-9-]+\\.externals" .driver.values.resId }}
+    {{- if regexMatch "modules\\.[a-z0-9-]+\\.externals" .driver.values.resId }}
     name: redis-{{ index (splitList "." .driver.values.resId) 1 | substr 0 20 }}-{{ index (splitList "." .driver.values.resId) 3 | substr 0 20 }}
     {{- else }}
     name: redis-{{ index (splitList "." .driver.values.resId) 1 | substr 0 40 }}
@@ -27,11 +27,12 @@ templates:
         spec:
           selector:
             matchLabels:
-              app: {{ .init.name }}
+              app.kubernetes.io/name: {{ .init.name }}
           template:
             metadata:
               labels:
-                app: {{ .init.name }}
+                app.kubernetes.io/name: {{ .init.name }}
+                humanitec.io/trusted-workload: "true"
             spec:
               automountServiceAccountToken: false
               securityContext:
@@ -60,7 +61,7 @@ templates:
                     memory: 64Mi
                 ports:
                 - name: tcp-redis
-                  containerPort: 6379
+                  containerPort: {{ .init.port }}
                 volumeMounts:
                 - mountPath: /data
                   name: redis-data
@@ -77,11 +78,35 @@ templates:
         spec:
           type: ClusterIP
           selector:
-            app: {{ .init.name }}
+            app.kubernetes.io/name: {{ .init.name }}
           ports:
           - name: tcp-redis
             port: {{ .init.port }}
             targetPort: tcp-redis
+    networkpolicy.yaml:
+      location: namespace
+      data:
+        apiVersion: networking.k8s.io/v1
+        kind: NetworkPolicy
+        metadata:
+          name: ingress-to-{{ .init.name }}
+        spec:
+          podSelector:
+            matchLabels:
+              app.kubernetes.io/name: {{ .init.name }}
+              humanitec.io/trusted-workload: "true"
+          policyTypes:
+            - Ingress
+          ingress:
+            - from:
+              - podSelector:
+                  matchLabels:
+                    {{- if regexMatch "modules\\.[a-z0-9-]+\\.externals" .driver.values.resId }}
+                    app.kubernetes.io/name: {{ index (splitList "." .driver.values.resId) 1 }}
+                    {{- end }}
+                    humanitec.io/trusted-workload: "true"
+              ports:
+                - port: {{ .init.port }}
   outputs: |-
     host: {{ .init.name }}
     port: {{ .init.port }}

@@ -2,6 +2,13 @@ templates:
   outputs: |-
     update:
       - op: add
+        path: /spec/pod/labels
+        value:
+          {{- range $key, $val := .resource.spec.pod.labels }}
+          {{ $key }}: {{ $val | quote }}
+          {{- end }}
+          humanitec.io/trusted-workload: "true"
+      - op: add
         path: /spec/serviceAccountName
         value: ${resources.k8s-service-account.outputs.name}
       - op: add
