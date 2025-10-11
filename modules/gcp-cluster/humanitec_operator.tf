@@ -171,7 +171,7 @@ resource "kubernetes_network_policy" "humanitec_operator_egress" {
         protocol = "TCP"
       }
     }
-    
+
     egress {
       to {
         ip_block {
